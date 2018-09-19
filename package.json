@@ -1,35 +1,59 @@
 {
-  "name": "next-website",
-  "description": "Next.js Official Homepage",
-  "version": "1.6.1",
+  "name": "next-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:quietshu/next-site.git",
+  "author": "Shu <ds303077135@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "export": "next export",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint",
+    "prettier": "prettier **/*.js --write --single-quote",
+    "lint-staged": "lint-staged"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zeit/next-website.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "homepage": "https://nextjs.org",
-  "bugs": {
-    "url": "https://github.com/zeit/next-website/issues"
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote",
+      "git add"
+    ]
   },
   "dependencies": {
-    "@mdx-js/mdx": "0.7.3",
-    "@zeit/next-mdx": "1.0.0",
-    "intersection-observer": "0.5.0",
-    "lodash.debounce": "4.0.8",
-    "mitt": "1.1.3",
-    "next": "6.0.3",
-    "nprogress": "0.2.0",
-    "react": "16.3.0",
-    "react-dom": "16.3.0",
-    "react-slick": "0.23.1",
-    "react-transition-group": "2.3.1",
-    "scroll-into-view-if-needed": "1.5.0"
+    "@mapbox/rehype-prism": "^0.3.0",
+    "@mdx-js/mdx": "^0.15.0",
+    "@mdx-js/tag": "^0.15.0",
+    "@sindresorhus/slugify": "^0.3.0",
+    "@zeit/next-bundle-analyzer": "^0.1.1",
+    "@zeit/next-mdx": "^1.1.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "classnames": "^2.2.6",
+    "date-fns": "^1.29.0",
+    "highlight.js": "^9.12.0",
+    "intersection-observer": "^0.5.0",
+    "mitt": "^1.1.3",
+    "next": "^7.0.0-canary.20",
+    "polished": "^2.0.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-frame-component": "^4.0.1",
+    "react-highlight": "^0.12.0",
+    "react-spring": "^5.6.14",
+    "react-virtualized": "^9.20.1",
+    "scroll-into-view-if-needed": "^2.2.16"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "lint-staged": "^7.2.2",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.14.2"
   }
 }

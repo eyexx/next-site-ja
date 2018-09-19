@@ -11,7 +11,6 @@ xmlnsXlink="http://www.w3.org/1999/xlink"
     y1="181.283245%"
     x2="41.7687834%"
     y2="100%"
-    id="a"
   >
     <stop stopColor="#FFF" offset="0%" />
     <stop stopColor="#000" offset="100%" />

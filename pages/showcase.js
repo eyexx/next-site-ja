@@ -1,91 +1,60 @@
-import Page from '../components/page'
-import Slider from '../components/showcase/slider'
-import {generateShowcaseUrl} from '../components/showcase/slider/showcase-link'
-import {sortOrder, mapping} from '../showcase-manifest'
-import {withRouter} from 'next/router'
-import Screen from '../components/screen'
+import { withRouter } from 'next/router';
 
-// Returns the right slide index based on the current position
-function normalizeSlideIndex(arr, index, fn) {
-  // The logic doesn't care about the implementation, just the result
-  const result = fn(index)
+import Page from '../components/page';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import Navbar from '../components/navbar';
+import Tabs from '../components/tabs';
+import { MediaQueryConsumer } from '../components/media-query';
 
-  // If the result is bigger than the length of the array we return the start of the array
-  if(result > (arr.length - 1)) {
-    return 0
-  }
+import Title from '../components/showcase/title';
+import List from '../components/showcase/list';
+import Filter from '../components/showcase/filter';
+import SiteDetail from '../components/showcase/site-detail';
+import SocialMeta from '../components/social-meta';
 
-  // If the result is lower than the start of the array we return the end of the array
-  if(result < 0) {
-    return arr.length -1
-  }
+import { categories, mapping } from '../showcase-manifest';
 
-  // If the result is within the array parameters we return it
-  return result
+const HEADER_HEIGHT = 16 * 12;
+
+function Showcase({ router }) {
+  const { item, from } = router.query;
+
+  return (
+    <Page title="Next.js - Showcase">
+      <SocialMeta
+        image={'/static/twitter-cards/showcase.png'}
+        title="Next.js - Showcase"
+        url="https://nextjs.org/showcase"
+        description="Meet hundreds of beautiful websites powered by Next.js"
+      />
+      <Header height={0} zIndex={1001} background="white" defaultActive>
+        <Navbar />
+      </Header>
+      <SiteDetail siteData={mapping[item]} from={from} />
+      <MediaQueryConsumer>
+        {({ isMobile }) => (
+          <Tabs data={categories}>
+            {(onSelect, selectedId) => (
+              <>
+                <Header
+                  height={HEADER_HEIGHT + 64 + 32 + (isMobile ? 32 : 0)}
+                  distance={HEADER_HEIGHT}
+                  offset={-HEADER_HEIGHT}
+                  shadow
+                >
+                  <Title height={HEADER_HEIGHT + 64 + (isMobile ? 32 : 0)} />
+                  <Filter onSelect={onSelect} selectedId={selectedId} />
+                </Header>
+                <List category={selectedId} />
+              </>
+            )}
+          </Tabs>
+        )}
+      </MediaQueryConsumer>
+      <Footer />
+    </Page>
+  );
 }
 
-// Since objects don't allow for a sort order we have to map an array to the object
-function mapIndexToRoute(index) {
-  const route = sortOrder[index]
-  return mapping[route]
-}
-
-function calculateSlides(sortOrder, route) {
-  let currentSlideIndex = sortOrder.indexOf(route)
-  if(currentSlideIndex === -1) {
-    currentSlideIndex = 0
-  }
-  const previousSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, (x) => x - 1)
-  const nextSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, (x) => x + 1)
-  return {
-    currentSlide: mapIndexToRoute(currentSlideIndex),
-    previousSlide: mapIndexToRoute(previousSlideIndex),
-    nextSlide: mapIndexToRoute(nextSlideIndex)
-  }
-}
-
-class ArrowEvents extends React.Component {
-  handleKeyDown = (event) => {
-    const isLeft = event.keyCode === 37
-    const isRight = event.keyCode === 39
-
-    const {router, previousSlide, nextSlide} = this.props
-    if(isLeft) {
-      const {href, as} = generateShowcaseUrl(previousSlide)
-      router.replace(href, as)
-      return
-    }
-
-    if(isRight) {
-      const {href, as} = generateShowcaseUrl(nextSlide)
-      router.replace(href, as)
-      return
-    }
-  }
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyDown)
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyDown)
-  }
-
-  render() {
-    return null
-  }
-}
-
-function Showcase({router}) {
-  const {query} = router
-  const {item} = query
-  const {currentSlide, previousSlide, nextSlide} = calculateSlides(sortOrder, item)
-  return <Page>
-    <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
-    <Screen offset={144}>
-      <Slider currentSlide={currentSlide} previousSlide={previousSlide} nextSlide={nextSlide} />
-    </Screen>
-  </Page>
-}
-
-export default withRouter(Showcase)
+export default withRouter(Showcase);

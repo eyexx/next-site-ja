@@ -1,3 +1,7 @@
-out
-node_modules
 .next
+node_modules
+.DS_Store
+.vscode
+out
+yarn-error.log
+bundles

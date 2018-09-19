@@ -9,4 +9,4 @@ RUN yarn
 # We copy all source files
 COPY . .
 # We run the build and expose as /public
-RUN yarn build && yarn export -- -o /public
+RUN yarn build && yarn export -o /public

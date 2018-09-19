@@ -1,243 +1,555 @@
+const categories = ['All', 'Finance', 'News', 'E-commerce', 'Creative', 'Entertainment']
+const categoriesShort = ['All', 'Finance', 'News', 'E-comm', 'Creative', 'Entertainment']
+
+const frontSortOrder = [
+  'ticketmaster', 'invision', 'marvel', 'magic-leap', 'nike', 'netflix-jobs', 'mozilla-vr'
+]
+
 const sortOrder = [
-  "magic-leap",
-  "marvel",
-  "nike",
   "invision",
+  "marvel",
+  'coinbase',
+  "magic-leap",
+  "nike",
   "mozilla-vr",
   "netflix-jobs",
   "hulu",
   "boosted-boards",
   "elton-john",
-  "auth0-careers",
+  'binance',
+  "ticketmaster",
   "scale",
   "open-collective",
+  'styled-components',
+  "auth0-careers",
+  "iota-data-market",
+  'h1pl',
+  'square-enix-games',
   "eaze",
-  "hyper",
   "zeit",
   "a24",
   "avocode",
-  "iota-data-market",
   "expo",
   "sumup",
   "hashnode",
-  "design-better",
+  'jet',
   "weedmaps",
-  "sanity"
+  "sanity",
+  'aenetworks',
+  'tencent-news',
+  "idean",
+  "prisma",
+  'repl.it',
+  'satoshis.place',
+  'givecrypto',
+  'fontbase',
+  'midrive',
+  'stv',
+  'hyper',
+  'eurostar',
+  'deliveroo',
+  'plotly',
+  'docker',
+  'verge',
+  'whowhatwear',
+  'nteract',
+  'institchu',
+  'syntax.fm',
+  "design-better",
+  'nimiqscan',
+  'pusher',
+  'underbelly',
+  'worldpopulationreview',
 ]
 
 const mapping = {
+  ticketmaster: {
+    title: "Ticketmaster",
+    link: "https://www.ticketmaster.com/new",
+    src: "/static/images/showcases/ticketmaster.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'ticketmaster',
+    tags: ['e-commerce']
+  },
+  h1pl: {
+    title: "H1Z1 Pro League",
+    link: "https://h1pl.com",
+    src: "/static/images/showcases/h1pl.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'h1pl',
+    tags: ['entertainment']
+  },
+  nimiqscan: {
+    title: "NimiqScan",
+    link: "https://nimiqscan.com",
+    src: "/static/images/showcases/nimiqscan.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'nimiqscan',
+    tags: ['finance']
+  },
+  verge: {
+    title: "Verge",
+    link: "https://vergecurrency.com",
+    src: "/static/images/showcases/verge.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'verge',
+    tags: ['finance']
+  },
+  coinbase: {
+    title: "Coinbase",
+    link: "https://coinbase.engineering",
+    src: "/static/images/showcases/coinbase.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'coinbase',
+    tags: ['finance']
+  },
+  binance: {
+    title: "Binance",
+    link: "https://www.binance.com",
+    src: "/static/images/showcases/binance.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'binance',
+    highlighted: 2,
+    tags: ['finance']
+  },
+  'pusher': {
+    title: "Pusher",
+    link: "https://pusher.com",
+    src: "/static/images/showcases/pusher.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'pusher',
+    tags: ['creative']
+  },
+  "aenetworks": {
+    title: "A+E Networks",
+    link: "https://www.aenetworks.com",
+    src: "/static/images/showcases/aenetworks.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'aenetworks',
+    tags: ['news']
+  },
+  "worldpopulationreview": {
+    title: "World Population Review",
+    link: "http://worldpopulationreview.com",
+    src: "/static/images/showcases/worldpopulationreview.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'worldpopulationreview',
+    tags: ['news']
+  },
+  "underbelly": {
+    title: "Underbelly",
+    link: "https://underbelly.is",
+    src: "/static/images/showcases/underbelly.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'underbelly',
+    tags: ['e-commerce', 'creative']
+  },
+  "syntax.fm": {
+    title: "Syntax",
+    link: "https://syntax.fm",
+    src: "/static/images/showcases/syntax.fm.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'syntax.fm',
+    tags: ['creative']
+  },
+  "institchu": {
+    title: "InStitchu",
+    link: "https://www.institchu.com",
+    src: "/static/images/showcases/institchu.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'institchu',
+    tags: ['e-commerce']
+  },
+  "nteract": {
+    title: "nteract",
+    link: "https://nteract.io",
+    src: "/static/images/showcases/nteract.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'nteract',
+    tags: ['creative']
+  },
+  "whowhatwear": {
+    title: "Who What Wear UK",
+    link: "https://www.whowhatwear.co.uk",
+    src: "/static/images/showcases/whowhatwear.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'whowhatwear',
+    highlighted: 1,
+    tags: ['news']
+  },
+  "square-enix-games": {
+    title: "Square Enix",
+    link: "https://square-enix-games.com/en_US",
+    src: "/static/images/showcases/square-enix-games.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'square-enix-games',
+    highlighted: 1,
+    tags: ['entertainment']
+  },
+  "docker": {
+    title: "Docker",
+    link: "https://success.docker.com",
+    src: "/static/images/showcases/docker.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'docker',
+    tags: ['dev']
+  },
+  "plotly": {
+    title: "Plotly",
+    link: "https://plot.ly",
+    src: "/static/images/showcases/plotly.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'plotly',
+    tags: ['creative']
+  },
+  "deliveroo": {
+    title: "Deliveroo",
+    link: "https://deliveroo.co.uk",
+    src: "/static/images/showcases/deliveroo.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'deliveroo',
+    tags: ['e-commerce']
+  },
+  "eurostar": {
+    title: "Eurostar",
+    link: "https://hotels.eurostar.com/uk-en/paris",
+    src: "/static/images/showcases/eurostar.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'eurostar',
+    tags: ['e-commerce']
+  },
+  "stv": {
+    title: "STV",
+    link: "https://stv.tv",
+    src: "/static/images/showcases/stv.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'stv',
+    tags: ['entertainment']
+  },
+  "midrive": {
+    title: "Midrive",
+    link: "https://midrive.com",
+    src: "/static/images/showcases/midrive.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'midrive',
+    tags: ['e-commerce']
+  },
+  "fontbase": {
+    title: "FontBase",
+    link: "https://fontba.se",
+    src: "/static/images/showcases/fontbase.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'fontbase',
+    highlighted: 2,
+    tags: ['creative']
+  },
+  "givecrypto": {
+    title: "GiveCrypto",
+    link: "https://www.givecrypto.org",
+    src: "/static/images/showcases/givecrypto.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'givecrypto',
+    tags: ['finance']
+  },
+  "satoshis.place": {
+    title: "Satoshi's Place",
+    link: "https://satoshis.place",
+    src: "/static/images/showcases/satoshis.place.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'satoshis.place',
+    tags: ['finance']
+  },
+  "repl.it": {
+    title: "repl.it",
+    link: "https://repl.it",
+    src: "/static/images/showcases/repl.it.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'repl.it',
+    tags: ['dev']
+  },
+  "styled-components": {
+    title: "styled-components",
+    link: "https://www.styled-components.com",
+    src: "/static/images/showcases/styled-components.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'styled-components',
+    tags: ['dev']
+  },
+  "tencent-news": {
+    title: "Tencent News",
+    link: "https://xw.qq.com",
+    src: "/static/images/showcases/tencentnews.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'tencent-news',
+    highlighted: 2,
+    tags: ['news']
+  },
+  "jet": {
+    title: "Jet",
+    link: "https://jet.com",
+    src: "/static/images/showcases/jet.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'jet',
+    highlighted: 1,
+    tags: ['e-commerce']
+  },
+  "idean": {
+    title: "Idean",
+    link: "https://www.idean.com",
+    src: "/static/images/showcases/idean.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'idean',
+    tags: ['creative']
+  },
+  "prisma": {
+    title: "Prisma",
+    link: "https://www.prisma.io",
+    src: "/static/images/showcases/prisma.jpg",
+    width: 3836,
+    height: 2200,
+    internalUrl: 'prisma',
+    tags: ['dev']
+  },
   "magic-leap": {
     "title": "Magic Leap",
     "link": "https://magicleap.com",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"734\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"734\" fill=\"%235990a4\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23007eff\" fill-opacity=\"0.501961\" points=\"31,-16 241,76 271,1\" /><polygon fill=\"%23c19550\" fill-opacity=\"0.501961\" points=\"232,161 -16,91 271,60\" /><polygon fill=\"%230096ff\" fill-opacity=\"0.501961\" points=\"69,48 11,-16 -16,70\" /><polygon fill=\"%2300004d\" fill-opacity=\"0.501961\" points=\"78,82 122,77 102,161\" /><polygon fill=\"%23af2f08\" fill-opacity=\"0.501961\" points=\"169,48 136,40 151,161\" /><polygon fill=\"%23006eff\" fill-opacity=\"0.501961\" points=\"271,7 101,-16 121,50\" /><polygon fill=\"%23d4d790\" fill-opacity=\"0.501961\" points=\"271,120 96,76 263,66\" /><polygon fill=\"%23e2b46d\" fill-opacity=\"0.501961\" points=\"-16,119 49,48 87,106\" /><polygon fill=\"%2300a6fa\" fill-opacity=\"0.501961\" points=\"253,76 113,23 268,13\" /><polygon fill=\"%230087ff\" fill-opacity=\"0.501961\" points=\"-16,5 35,75 56,-15\" /><polygon fill=\"%2345a38e\" fill-opacity=\"0.501961\" points=\"108,125 231,161 271,114\" /><polygon fill=\"%23a590a2\" fill-opacity=\"0.501961\" points=\"35,-16 103,9 130,103\" /><polygon fill=\"%23b3dd98\" fill-opacity=\"0.501961\" points=\"-16,60 103,87 -5,97\" /><polygon fill=\"%23a20000\" fill-opacity=\"0.501961\" points=\"157,35 168,69 132,63\" /><polygon fill=\"%2300c5be\" fill-opacity=\"0.501961\" points=\"176,73 167,40 271,54\" /><polygon fill=\"%233c1b4b\" fill-opacity=\"0.501961\" points=\"85,139 108,52 117,161\" /><polygon fill=\"%237a3b44\" fill-opacity=\"0.501961\" points=\"116,100 165,96 154,161\" /><polygon fill=\"%230075ff\" fill-opacity=\"0.501961\" points=\"112,2 120,50 271,-1\" /><polygon fill=\"%2300c8d5\" fill-opacity=\"0.501961\" points=\"113,63 139,9 133,68\" /><polygon fill=\"%23a8cb8b\" fill-opacity=\"0.501961\" points=\"235,63 119,71 127,106\" /><polygon fill=\"%23e07c5b\" fill-opacity=\"0.501961\" points=\"154,106 271,110 229,86\" /><polygon fill=\"%236cba76\" fill-opacity=\"0.501961\" points=\"86,106 -16,121 90,161\" /><polygon fill=\"%2300b2c1\" fill-opacity=\"0.501961\" points=\"37,20 -16,75 67,47\" /><polygon fill=\"%23ff6e3d\" fill-opacity=\"0.501961\" points=\"161,37 143,42 171,59\" /><polygon fill=\"%23006aff\" fill-opacity=\"0.501961\" points=\"84,0 269,1 271,52\" /><polygon fill=\"%23307fce\" fill-opacity=\"0.501961\" points=\"95,31 77,95 101,92\" /><polygon fill=\"%238d1d48\" fill-opacity=\"0.501961\" points=\"87,32 74,45 49,35\" /><polygon fill=\"%23007aff\" fill-opacity=\"0.501961\" points=\"-16,42 57,39 35,-16\" /><polygon fill=\"%23300001\" fill-opacity=\"0.501961\" points=\"167,66 136,51 151,74\" /><polygon fill=\"%23b0715c\" fill-opacity=\"0.501961\" points=\"-16,88 89,106 -16,123\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-00.png",
+    "src": "/static/images/showcases/showcases-00.jpg",
     "width": 1280,
     "height": 734,
-    "internalUrl": "magic-leap"
+    "internalUrl": "magic-leap",
+    "highlighted": 1,
+    "tags": ['creative', 'entertainment']
   },
   "marvel": {
     "title": "Marvel",
-    "link": "https://www.marvel.com/",
-    "data": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%221280%22%20height%3D%22730%22%3E%0D%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221280%22%20height%3D%22730%22%20fill%3D%22%23b5a9a1%22%20%2F%3E%0D%0A%3Cg%20transform%3D%22scale%285.000000%29%20translate%280.5%200.5%29%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C99%20271%2C88%20245%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2351311d%22%20fill-opacity%3D%220.501961%22%20points%3D%22196%2C96%20254%2C-7%20-16%2C0%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22-12%2C155%20-5%2C96%20181%2C90%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%232b353e%22%20fill-opacity%3D%220.501961%22%20points%3D%227%2C-16%2061%2C86%20-16%2C99%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23eaf3f8%22%20fill-opacity%3D%220.501961%22%20points%3D%22135%2C161%20111%2C12%2047%2C12%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23400000%22%20fill-opacity%3D%220.501961%22%20points%3D%22144%2C42%20229%2C90%20117%2C88%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22254%2C11%20271%2C141%20186%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C9%20207%2C-16%20114%2C12%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2247%2C85%20146%2C161%20271%2C97%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22151%2C11%20198%2C11%20160%2C44%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000002%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C10%20133%2C11%2076%2C-16%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23693200%22%20fill-opacity%3D%220.501961%22%20points%3D%2248%2C161%20106%2C124%2049%2C125%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23fffffb%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C14%20253%2C161%20221%2C10%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffdaa8%22%20fill-opacity%3D%220.501961%22%20points%3D%22204%2C30%20168%2C49%20194%2C82%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C96%2086%2C98%2015%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23fb9d28%22%20fill-opacity%3D%220.501961%22%20points%3D%22216%2C14%20225%2C96%20241%2C14%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22177%2C24%20222%2C39%20210%2C16%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22141%2C32%20126%2C13%20167%2C-16%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2238%2C89%20212%2C161%20271%2C93%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23290f00%22%20fill-opacity%3D%220.501961%22%20points%3D%22224%2C90%20183%2C88%20230%2C69%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23600000%22%20fill-opacity%3D%220.501961%22%20points%3D%2239%2C161%20101%2C131%2098%2C152%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23a19c9c%22%20fill-opacity%3D%220.501961%22%20points%3D%22134%2C90%2043%2C11%2028%2C88%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231e1300%22%20fill-opacity%3D%220.501961%22%20points%3D%22178%2C83%20169%2C31%20151%2C90%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23e86137%22%20fill-opacity%3D%220.501961%22%20points%3D%22167%2C56%20114%2C67%20128%2C90%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22152%2C11%20187%2C13%20160%2C33%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2250%2C89%20-16%2C137%2045%2C160%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23d3d5d6%22%20fill-opacity%3D%220.501961%22%20points%3D%22105%2C20%2053%2C50%20129%2C68%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffa2%22%20fill-opacity%3D%220.501961%22%20points%3D%2279%2C123%2076%2C160%2063%2C144%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000008%22%20fill-opacity%3D%220.501961%22%20points%3D%2255%2C157%2057%2C126%2068%2C125%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23061524%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C11%20153%2C11%20235%2C-16%22%20%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E",
-    "src": "/static/images/showcases/marvel.png",
+    "link": "https://www.marvel.com",
+    "src": "/static/images/showcases/marvel.jpg",
     "width": 3840,
     "height": 2204,
-    "internalUrl": "marvel"
+    "internalUrl": "marvel",
+    "tags": ['entertainment']
   },
   "nike": {
     "title": "Nike",
     "link": "https://www.nike.com/help",
-    "data": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%221280%22%20height%3D%22735%22%3E%0D%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221280%22%20height%3D%22735%22%20fill%3D%22%23f9f9f9%22%20%2F%3E%0D%0A%3Cg%20transform%3D%22scale%285.000000%29%20translate%280.5%200.5%29%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23575757%22%20fill-opacity%3D%220.501961%22%20points%3D%22119%2C18%20137%2C17%20132%2C21%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23767676%22%20fill-opacity%3D%220.501961%22%20points%3D%2255%2C42%2080%2C43%2069%2C38%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23707070%22%20fill-opacity%3D%220.501961%22%20points%3D%2254%2C108%2073%2C107%2055%2C103%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23959494%22%20fill-opacity%3D%220.501961%22%20points%3D%22142%2C128%20111%2C129%20128%2C123%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%239f9f9f%22%20fill-opacity%3D%220.501961%22%20points%3D%2292%2C129%2081%2C122%2065%2C129%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23e9e9e9%22%20fill-opacity%3D%220.501961%22%20points%3D%2257%2C95%20152%2C93%2054%2C46%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C36%2094%2C-16%20105%2C41%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23adadad%22%20fill-opacity%3D%220.501961%22%20points%3D%22181%2C129%20171%2C128%20178%2C115%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22205%2C73%20202%2C126%2066%2C125%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23dfdfdf%22%20fill-opacity%3D%220.501961%22%20points%3D%22153%2C53%20152%2C88%20190%2C66%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2284%2C61%20183%2C-11%20271%2C29%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2254%2C68%20101%2C94%20106%2C66%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23dcdcdc%22%20fill-opacity%3D%220.501961%22%20points%3D%22107%2C69%20134%2C57%20102%2C54%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23d2d2d2%22%20fill-opacity%3D%220.501961%22%20points%3D%22183%2C86%20155%2C86%20179%2C77%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23c4c4c4%22%20fill-opacity%3D%220.501961%22%20points%3D%22149%2C13%20150%2C8%20131%2C9%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23949494%22%20fill-opacity%3D%220.501961%22%20points%3D%22131%2C18%20122%2C21%20116%2C18%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23dddddd%22%20fill-opacity%3D%220.501961%22%20points%3D%22100%2C78%20139%2C79%20120%2C95%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22215%2C-3%20132%2C-4%20198%2C85%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23dedede%22%20fill-opacity%3D%220.501961%22%20points%3D%2295%2C92%2055%2C72%2055%2C93%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23bbbbbb%22%20fill-opacity%3D%220.501961%22%20points%3D%22131%2C116%20128%2C127%20124%2C118%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2297%2C35%20113%2C162%2082%2C111%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23484848%22%20fill-opacity%3D%220.501961%22%20points%3D%2280%2C118%2077%2C118%2080%2C116%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22149%2C70%20185%2C71%20171%2C78%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2249%2C105%2065%2C104%2063%2C94%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22133%2C86%20126%2C19%20168%2C120%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%239f9f9f%22%20fill-opacity%3D%220.501961%22%20points%3D%224%2C7%201%2C11%2010%2C8%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22127%2C14%20-16%2C-2%2069%2C40%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23c9c9c9%22%20fill-opacity%3D%220.501961%22%20points%3D%2262%2C63%2072%2C54%2057%2C54%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22216%2C131%20-7%2C128%20112%2C162%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23767676%22%20fill-opacity%3D%220.501961%22%20points%3D%22108%2C8%20114%2C8%20115%2C10%22%20%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E",
-    "src": "/static/images/showcases/nike.png",
+    "src": "/static/images/showcases/nike.jpg",
     "width": 3840,
     "height": 2206,
     "internalUrl": "nike"
   },
   "boosted-boards": {
     "title": "Boosted Boards",
-    "link": "http://boostedboards.com/",
-    "data": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%221280%22%20height%3D%22730%22%3E%0D%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221280%22%20height%3D%22730%22%20fill%3D%22%2389c4c9%22%20%2F%3E%0D%0A%3Cg%20transform%3D%22scale%285.000000%29%20translate%280.5%200.5%29%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23160000%22%20fill-opacity%3D%220.501961%22%20points%3D%2210%2C75%2077%2C100%20221%2C6%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C136%20250%2C89%20265%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231b0000%22%20fill-opacity%3D%220.501961%22%20points%3D%22133%2C64%20222%2C6%20223%2C43%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22194%2C112%20-16%2C116%2026%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2323daed%22%20fill-opacity%3D%220.501961%22%20points%3D%22187%2C48%20271%2C106%2079%2C113%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%232ad5ea%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C8%20187%2C13%204%2C80%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22201%2C-16%20271%2C9%20111%2C7%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2265%2C-16%20-16%2C7%20149%2C8%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C107%20238%2C161%2040%2C115%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23fef5f1%22%20fill-opacity%3D%220.501961%22%20points%3D%22125%2C61%20160%2C49%2093%2C51%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23160d08%22%20fill-opacity%3D%220.501961%22%20points%3D%2295%2C48%2032%2C70%2088%2C96%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2340f1ff%22%20fill-opacity%3D%220.501961%22%20points%3D%22157%2C64%2096%2C75%2093%2C106%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ff833a%22%20fill-opacity%3D%220.501961%22%20points%3D%22219%2C73%20203%2C39%20237%2C55%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22161%2C117%20-6%2C116%202%2C160%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2338dff0%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C118%2063%2C112%20-3%2C49%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ff9d4e%22%20fill-opacity%3D%220.501961%22%20points%3D%2259%2C92%2075%2C122%2089%2C95%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%232dccdf%22%20fill-opacity%3D%220.501961%22%20points%3D%22218%2C9%20249%2C106%20271%2C8%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23070300%22%20fill-opacity%3D%220.501961%22%20points%3D%22232%2C23%20160%2C53%20216%2C46%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2245%2C8%20197%2C8%20133%2C-16%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ff2700%22%20fill-opacity%3D%220.501961%22%20points%3D%22200%2C-15%20206%2C7%20187%2C5%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23a1a4a2%22%20fill-opacity%3D%220.501961%22%20points%3D%22175%2C30%20140%2C59%20227%2C26%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%235ed3e0%22%20fill-opacity%3D%220.501961%22%20points%3D%2284%2C109%20223%2C109%20206%2C41%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C106%2064%2C115%20268%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23252521%22%20fill-opacity%3D%220.501961%22%20points%3D%22131%2C33%20146%2C50%20181%2C19%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22202%2C-16%20209%2C12%20268%2C3%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231d1410%22%20fill-opacity%3D%220.501961%22%20points%3D%2266%2C84%2029%2C72%2030%2C88%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2345e0f4%22%20fill-opacity%3D%220.501961%22%20points%3D%2262%2C85%2017%2C92%2065%2C100%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%222%2C9%20-6%2C-16%2085%2C5%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23c8b5b3%22%20fill-opacity%3D%220.501961%22%20points%3D%22167%2C133%20167%2C161%2077%2C135%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%234c4039%22%20fill-opacity%3D%220.501961%22%20points%3D%22232%2C28%20168%2C21%20223%2C11%22%20%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E",
-    "src": "/static/images/showcases/boosted.png",
+    "link": "http://boostedboards.com",
+    "src": "/static/images/showcases/boosted.jpg",
     "width": 3840,
     "height": 2206,
-    "internalUrl": "boosted-boards"
+    "internalUrl": "boosted-boards",
+    "tags": ['e-commerce']
   },
   "eaze": {
     "title": "Eaze",
     "link": "https://www.eaze.com",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"734\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"734\" fill=\"%23acc9d8\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23380000\" fill-opacity=\"0.501961\" points=\"160,103 57,44 55,105\" /><polygon fill=\"%23008bdd\" fill-opacity=\"0.501961\" points=\"-16,48 38,-16 271,47\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,142 257,161 257,58\" /><polygon fill=\"%230083df\" fill-opacity=\"0.501961\" points=\"72,-8 271,46 251,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"109,161 14,36 -16,141\" /><polygon fill=\"%231d0000\" fill-opacity=\"0.501961\" points=\"153,78 162,52 209,78\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,33 60,158 271,161\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"8,159 -16,51 65,47\" /><polygon fill=\"%23432f15\" fill-opacity=\"0.501961\" points=\"149,105 58,105 150,78\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"55,56 59,80 90,55\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"221,161 271,48 197,49\" /><polygon fill=\"%23ffffd3\" fill-opacity=\"0.501961\" points=\"157,25 86,26 123,37\" /><polygon fill=\"%23ffedce\" fill-opacity=\"0.501961\" points=\"163,48 113,84 77,48\" /><polygon fill=\"%23299bda\" fill-opacity=\"0.501961\" points=\"-3,-16 -3,48 129,46\" /><polygon fill=\"%23190b04\" fill-opacity=\"0.501961\" points=\"172,77 199,55 200,78\" /><polygon fill=\"%23d7b69a\" fill-opacity=\"0.501961\" points=\"75,77 162,52 144,89\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"52,161 -16,43 56,60\" /><polygon fill=\"%23a51700\" fill-opacity=\"0.501961\" points=\"100,123 102,132 81,133\" /><polygon fill=\"%237d5028\" fill-opacity=\"0.501961\" points=\"108,101 56,97 99,52\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"151,110 -3,102 -16,156\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"92,51 19,60 51,45\" /><polygon fill=\"%23776b5c\" fill-opacity=\"0.501961\" points=\"155,80 201,54 152,56\" /><polygon fill=\"%23ffd205\" fill-opacity=\"0.501961\" points=\"157,32 138,31 152,23\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"189,50 261,48 269,161\" /><polygon fill=\"%2331a1da\" fill-opacity=\"0.501961\" points=\"271,48 133,45 234,-16\" /><polygon fill=\"%23efab7e\" fill-opacity=\"0.501961\" points=\"79,85 86,55 73,68\" /><polygon fill=\"%23f4f9fd\" fill-opacity=\"0.501961\" points=\"115,47 119,80 97,81\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"203,48 143,48 171,57\" /><polygon fill=\"%23534334\" fill-opacity=\"0.501961\" points=\"57,82 57,106 121,105\" /><polygon fill=\"%23daf1f6\" fill-opacity=\"0.501961\" points=\"209,81 162,139 148,78\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-01.png",
+    "src": "/static/images/showcases/showcases-01.jpg",
     "width": 3832,
     "height": 2198,
-    "internalUrl": "eaze"
+    "internalUrl": "eaze",
+    "tags": ['e-commerce']
   },
   "netflix-jobs": {
     "title": "Netflix Jobs",
     "link": "https://jobs.netflix.com",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"734\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"734\" fill=\"%23706c6b\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,116 78,161 244,117\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"178,116 244,161 271,117\" /><polygon fill=\"%2326201e\" fill-opacity=\"0.501961\" points=\"80,115 255,-16 255,116\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"13,161 179,120 -16,116\" /><polygon fill=\"%232b2422\" fill-opacity=\"0.501961\" points=\"-15,114 -2,-16 93,115\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"78,61 41,79 137,78\" /><polygon fill=\"%23080000\" fill-opacity=\"0.501961\" points=\"144,158 144,129 211,129\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,121 211,161 204,116\" /><polygon fill=\"%232f2728\" fill-opacity=\"0.501961\" points=\"157,68 61,68 192,21\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"179,123 -16,117 19,161\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"109,79 75,69 140,70\" /><polygon fill=\"%23010000\" fill-opacity=\"0.501961\" points=\"89,-16 22,2 156,3\" /><polygon fill=\"%231f1b18\" fill-opacity=\"0.501961\" points=\"54,115 141,80 67,79\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"94,76 45,80 51,68\" /><polygon fill=\"%23616164\" fill-opacity=\"0.501961\" points=\"64,63 190,-16 271,23\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"66,124 146,151 142,117\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,116 246,161 191,119\" /><polygon fill=\"%233a3838\" fill-opacity=\"0.501961\" points=\"95,143 61,142 38,161\" /><polygon fill=\"%23050303\" fill-opacity=\"0.501961\" points=\"252,3 183,-16 142,3\" /><polygon fill=\"%23000208\" fill-opacity=\"0.501961\" points=\"222,113 163,117 155,98\" /><polygon fill=\"%23555256\" fill-opacity=\"0.501961\" points=\"-2,-10 2,36 166,35\" /><polygon fill=\"%232b2627\" fill-opacity=\"0.501961\" points=\"48,23 47,86 -16,103\" /><polygon fill=\"%23f4f1e9\" fill-opacity=\"0.501961\" points=\"139,161 172,161 156,136\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"171,116 125,129 216,128\" /><polygon fill=\"%23a6a2a0\" fill-opacity=\"0.501961\" points=\"132,36 94,50 152,49\" /><polygon fill=\"%237c7c7f\" fill-opacity=\"0.501961\" points=\"271,5 164,12 271,34\" /><polygon fill=\"%23261e13\" fill-opacity=\"0.501961\" points=\"142,129 174,144 207,133\" /><polygon fill=\"%23e0e7e2\" fill-opacity=\"0.501961\" points=\"188,161 177,120 176,156\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"135,69 136,80 104,68\" /><polygon fill=\"%237d7d80\" fill-opacity=\"0.501961\" points=\"99,11 11,31 -16,6\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-02.png",
+    "src": "/static/images/showcases/showcases-02.jpg",
     "width": 3836,
     "height": 2200,
-    "internalUrl": "netflix-jobs"
+    "internalUrl": "netflix-jobs",
+    "tags": ['entertainment']
   },
   "auth0-careers": {
     "title": "Auth0 Careers",
     "link": "https://auth0.com/careers",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"734\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"734\" fill=\"%23aca8a6\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23271f15\" fill-opacity=\"0.501961\" points=\"250,87 -16,86 224,-7\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"198,161 271,87 -16,88\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"6,85 271,138 -16,161\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,87 -16,88 251,161\" /><polygon fill=\"%237f7d7c\" fill-opacity=\"0.501961\" points=\"-12,81 4,-16 271,33\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,86 267,144 -2,161\" /><polygon fill=\"%23b9bab7\" fill-opacity=\"0.501961\" points=\"177,54 189,2 71,54\" /><polygon fill=\"%2314222c\" fill-opacity=\"0.501961\" points=\"-16,69 125,86 109,51\" /><polygon fill=\"%234a2c14\" fill-opacity=\"0.501961\" points=\"189,-16 184,87 246,83\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"187,54 145,56 158,85\" /><polygon fill=\"%23713020\" fill-opacity=\"0.501961\" points=\"53,37 76,12 27,3\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"265,144 63,89 271,88\" /><polygon fill=\"%23a4a39e\" fill-opacity=\"0.501961\" points=\"115,67 155,90 120,-13\" /><polygon fill=\"%234d5d69\" fill-opacity=\"0.501961\" points=\"9,88 122,62 -16,56\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"112,64 125,87 87,78\" /><polygon fill=\"%238b756c\" fill-opacity=\"0.501961\" points=\"211,68 204,13 240,-7\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,148 165,151 -16,89\" /><polygon fill=\"%230a0808\" fill-opacity=\"0.501961\" points=\"-16,87 -5,62 18,86\" /><polygon fill=\"%23acb0b2\" fill-opacity=\"0.501961\" points=\"271,64 229,48 237,-12\" /><polygon fill=\"%23a38876\" fill-opacity=\"0.501961\" points=\"191,87 165,87 169,60\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"73,65 82,54 109,56\" /><polygon fill=\"%2343301e\" fill-opacity=\"0.501961\" points=\"198,84 210,-4 185,-16\" /><polygon fill=\"%23989894\" fill-opacity=\"0.501961\" points=\"189,43 40,60 176,-16\" /><polygon fill=\"%23cec1b5\" fill-opacity=\"0.501961\" points=\"108,62 102,69 92,61\" /><polygon fill=\"%2397a8af\" fill-opacity=\"0.501961\" points=\"43,2 43,22 63,11\" /><polygon fill=\"%23efefef\" fill-opacity=\"0.501961\" points=\"171,115 82,82 -16,103\" /><polygon fill=\"%2399a2ab\" fill-opacity=\"0.501961\" points=\"-16,68 -3,10 69,39\" /><polygon fill=\"%236d2412\" fill-opacity=\"0.501961\" points=\"33,0 71,2 71,-16\" /><polygon fill=\"%23b9b9b9\" fill-opacity=\"0.501961\" points=\"157,109 100,108 125,117\" /><polygon fill=\"%234e5f6e\" fill-opacity=\"0.501961\" points=\"12,56 94,82 3,87\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-03.png",
+    "src": "/static/images/showcases/showcases-03.jpg",
     "width": 3828,
     "height": 2184,
-    "internalUrl": "auth0-careers"
+    "internalUrl": "auth0-careers",
+    "tags": ['creative']
   },
   "scale": {
     "title": "Scale",
     "link": "https://scaleapi.com",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"734\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"734\" fill=\"%23d8b7df\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%236a16a7\" fill-opacity=\"0.501961\" points=\"114,37 -16,107 271,109\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,5 -16,58 9,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"21,122 215,161 271,106\" /><polygon fill=\"%23de449e\" fill-opacity=\"0.501961\" points=\"-16,41 -16,105 116,42\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"211,115 19,161 -16,108\" /><polygon fill=\"%23ce3cab\" fill-opacity=\"0.501961\" points=\"147,41 271,117 267,41\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"243,-16 34,41 271,40\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"176,25 141,27 169,34\" /><polygon fill=\"%23090042\" fill-opacity=\"0.501961\" points=\"55,84 102,83 95,115\" /><polygon fill=\"%232d0045\" fill-opacity=\"0.501961\" points=\"151,47 110,81 111,47\" /><polygon fill=\"%23000010\" fill-opacity=\"0.501961\" points=\"170,112 157,81 155,110\" /><polygon fill=\"%23ffc7e3\" fill-opacity=\"0.501961\" points=\"137,112 108,75 162,76\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,105 207,135 8,161\" /><polygon fill=\"%23ffc6db\" fill-opacity=\"0.501961\" points=\"200,76 154,77 142,24\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,44 221,17 7,-16\" /><polygon fill=\"%23f8ffff\" fill-opacity=\"0.501961\" points=\"166,107 170,90 196,108\" /><polygon fill=\"%230e053f\" fill-opacity=\"0.501961\" points=\"151,83 199,83 174,93\" /><polygon fill=\"%23000021\" fill-opacity=\"0.501961\" points=\"194,112 167,112 189,106\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"223,161 93,115 271,110\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"155,24 141,32 175,30\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"253,-16 154,41 271,41\" /><polygon fill=\"%233a0d79\" fill-opacity=\"0.501961\" points=\"64,84 100,110 64,112\" /><polygon fill=\"%23903ef9\" fill-opacity=\"0.501961\" points=\"183,108 248,70 267,108\" /><polygon fill=\"%23983ffb\" fill-opacity=\"0.501961\" points=\"-16,108 19,66 61,109\" /><polygon fill=\"%23c88ee8\" fill-opacity=\"0.501961\" points=\"107,40 21,86 109,82\" /><polygon fill=\"%23ffe9d9\" fill-opacity=\"0.501961\" points=\"99,21 137,46 46,47\" /><polygon fill=\"%23150460\" fill-opacity=\"0.501961\" points=\"146,48 130,47 147,77\" /><polygon fill=\"%237e4eff\" fill-opacity=\"0.501961\" points=\"109,102 142,111 82,112\" /><polygon fill=\"%23ce58c1\" fill-opacity=\"0.501961\" points=\"61,58 64,93 -16,76\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,126 35,108 85,161\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-04.png",
+    "src": "/static/images/showcases/showcases-04.jpg",
     "width": 3836,
     "height": 2198,
-    "internalUrl": "scale"
+    "internalUrl": "scale",
+    "tags": ['creative']
   },
   "elton-john": {
     "title": "Elton John",
     "link": "https://www.eltonjohn.com",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"734\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"734\" fill=\"%23635d50\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23fffffe\" fill-opacity=\"0.501961\" points=\"215,159 231,-16 127,19\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"160,10 8,162 -16,-16\" /><polygon fill=\"%230c0800\" fill-opacity=\"0.501961\" points=\"111,143 -16,162 13,-16\" /><polygon fill=\"%23adaac2\" fill-opacity=\"0.501961\" points=\"195,-16 118,17 121,129\" /><polygon fill=\"%23dcd8b5\" fill-opacity=\"0.501961\" points=\"257,17 172,162 152,17\" /><polygon fill=\"%23fcd042\" fill-opacity=\"0.501961\" points=\"93,58 34,59 40,80\" /><polygon fill=\"%23e4b143\" fill-opacity=\"0.501961\" points=\"157,162 220,145 219,66\" /><polygon fill=\"%23ffffd6\" fill-opacity=\"0.501961\" points=\"117,89 136,68 131,128\" /><polygon fill=\"%23110040\" fill-opacity=\"0.501961\" points=\"141,155 138,78 171,79\" /><polygon fill=\"%231a1800\" fill-opacity=\"0.501961\" points=\"223,162 219,93 271,130\" /><polygon fill=\"%23defff1\" fill-opacity=\"0.501961\" points=\"210,-16 211,55 151,73\" /><polygon fill=\"%2350486c\" fill-opacity=\"0.501961\" points=\"109,-16 163,21 111,81\" /><polygon fill=\"%23b79e7c\" fill-opacity=\"0.501961\" points=\"263,105 228,67 128,66\" /><polygon fill=\"%23060500\" fill-opacity=\"0.501961\" points=\"1,-16 148,-16 -16,85\" /><polygon fill=\"%230f0f00\" fill-opacity=\"0.501961\" points=\"-16,146 91,150 102,76\" /><polygon fill=\"%23a96476\" fill-opacity=\"0.501961\" points=\"150,99 204,162 199,111\" /><polygon fill=\"%234b4621\" fill-opacity=\"0.501961\" points=\"107,154 24,77 103,62\" /><polygon fill=\"%23272200\" fill-opacity=\"0.501961\" points=\"219,68 258,76 271,40\" /><polygon fill=\"%23392945\" fill-opacity=\"0.501961\" points=\"168,69 165,93 183,120\" /><polygon fill=\"%23787694\" fill-opacity=\"0.501961\" points=\"268,11 231,60 218,-6\" /><polygon fill=\"%23f9fffe\" fill-opacity=\"0.501961\" points=\"249,75 235,91 238,75\" /><polygon fill=\"%23d23cff\" fill-opacity=\"0.501961\" points=\"197,132 187,128 189,162\" /><polygon fill=\"%231e002f\" fill-opacity=\"0.501961\" points=\"164,116 172,162 142,103\" /><polygon fill=\"%23ecffff\" fill-opacity=\"0.501961\" points=\"166,94 174,110 157,102\" /><polygon fill=\"%23381f0f\" fill-opacity=\"0.501961\" points=\"126,162 119,115 170,161\" /><polygon fill=\"%23c9a334\" fill-opacity=\"0.501961\" points=\"91,72 65,71 89,59\" /><polygon fill=\"%23151100\" fill-opacity=\"0.501961\" points=\"271,109 241,104 253,160\" /><polygon fill=\"%23feffd5\" fill-opacity=\"0.501961\" points=\"136,128 133,81 122,112\" /><polygon fill=\"%23888f57\" fill-opacity=\"0.501961\" points=\"112,160 101,104 130,44\" /><polygon fill=\"%23c7c895\" fill-opacity=\"0.501961\" points=\"247,87 235,110 221,113\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-05.png",
+    "src": "/static/images/showcases/showcases-05.jpg",
     "width": 3840,
     "height": 2206,
-    "internalUrl": "elton-john"
+    "internalUrl": "elton-john",
+    "tags": ['creative', 'entertainment']
   },
   "open-collective": {
     "title": "Open Collective",
     "link": "https://opencollective.com",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"734\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"734\" fill=\"%23f9fafb\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%238e8f91\" fill-opacity=\"0.501961\" points=\"165,32 134,44 95,34\" /><polygon fill=\"%238cbce1\" fill-opacity=\"0.501961\" points=\"132,9 135,38 117,16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"270,93 269,33 58,41\" /><polygon fill=\"%23cacbca\" fill-opacity=\"0.501961\" points=\"121,107 154,98 91,96\" /><polygon fill=\"%23858586\" fill-opacity=\"0.501961\" points=\"113,34 96,32 97,41\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,126 127,8 10,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"260,75 255,-16 124,17\" /><polygon fill=\"%237c7874\" fill-opacity=\"0.501961\" points=\"122,37 135,33 144,37\" /><polygon fill=\"%23c8ccd1\" fill-opacity=\"0.501961\" points=\"125,43 91,43 99,36\" /><polygon fill=\"%23636669\" fill-opacity=\"0.501961\" points=\"160,33 157,38 148,33\" /><polygon fill=\"%23f1f4f6\" fill-opacity=\"0.501961\" points=\"75,97 123,148 182,105\" /><polygon fill=\"%23c6cbd2\" fill-opacity=\"0.501961\" points=\"162,41 135,41 152,47\" /><polygon fill=\"%23959492\" fill-opacity=\"0.501961\" points=\"149,32 122,33 134,37\" /><polygon fill=\"%2345a1e4\" fill-opacity=\"0.501961\" points=\"124,11 128,13 119,19\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"189,2 112,32 254,17\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"13,-16 100,40 -16,78\" /><polygon fill=\"%23feffff\" fill-opacity=\"0.501961\" points=\"110,69 24,44 194,43\" /><polygon fill=\"%232f94df\" fill-opacity=\"0.501961\" points=\"133,23 122,24 130,26\" /><polygon fill=\"%23dae6f5\" fill-opacity=\"0.501961\" points=\"222,139 218,124 193,136\" /><polygon fill=\"%23aec8ef\" fill-opacity=\"0.501961\" points=\"131,20 135,23 135,13\" /><polygon fill=\"%23d9e6f7\" fill-opacity=\"0.501961\" points=\"113,128 133,149 134,121\" /><polygon fill=\"%23dadbda\" fill-opacity=\"0.501961\" points=\"147,96 135,105 180,105\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"117,55 122,44 119,32\" /><polygon fill=\"%23909191\" fill-opacity=\"0.501961\" points=\"115,33 101,39 102,32\" /><polygon fill=\"%23deeffc\" fill-opacity=\"0.501961\" points=\"123,60 85,71 162,70\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"233,80 271,13 92,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"124,19 128,13 143,36\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,20 104,-16 126,31\" /><polygon fill=\"%23feffff\" fill-opacity=\"0.501961\" points=\"8,69 10,13 163,67\" /><polygon fill=\"%23b1b2b2\" fill-opacity=\"0.501961\" points=\"133,100 121,98 129,97\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-06.png",
+    "src": "/static/images/showcases/showcases-06.jpg",
     "width": 3836,
     "height": 2206,
-    "internalUrl": "open-collective"
+    "internalUrl": "open-collective",
+    "tags": ['creative']
   },
   "a24": {
     "title": "A24",
     "link": "https://www.a24.com",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"734\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"734\" fill=\"%2355524d\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23eff3df\" fill-opacity=\"0.501961\" points=\"186,19 127,92 110,13\" /><polygon fill=\"%23e8ed4e\" fill-opacity=\"0.501961\" points=\"179,94 69,62 192,64\" /><polygon fill=\"%231d1c22\" fill-opacity=\"0.501961\" points=\"115,50 -16,85 4,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,143 87,144 42,161\" /><polygon fill=\"%23d3d787\" fill-opacity=\"0.501961\" points=\"67,86 79,56 131,83\" /><polygon fill=\"%23e9ffff\" fill-opacity=\"0.501961\" points=\"170,28 135,18 147,69\" /><polygon fill=\"%23222030\" fill-opacity=\"0.501961\" points=\"135,120 43,84 244,87\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"128,61 146,65 135,36\" /><polygon fill=\"%23edd5a3\" fill-opacity=\"0.501961\" points=\"87,29 67,16 122,15\" /><polygon fill=\"%23201d23\" fill-opacity=\"0.501961\" points=\"0,141 -15,97 131,144\" /><polygon fill=\"%230e1015\" fill-opacity=\"0.501961\" points=\"219,42 158,43 161,66\" /><polygon fill=\"%23393c40\" fill-opacity=\"0.501961\" points=\"196,-16 195,161 271,52\" /><polygon fill=\"%236d6e00\" fill-opacity=\"0.501961\" points=\"88,74 160,75 122,64\" /><polygon fill=\"%23807782\" fill-opacity=\"0.501961\" points=\"95,102 47,132 143,124\" /><polygon fill=\"%23000001\" fill-opacity=\"0.501961\" points=\"123,137 198,136 159,126\" /><polygon fill=\"%23e0e04c\" fill-opacity=\"0.501961\" points=\"192,63 187,83 120,64\" /><polygon fill=\"%23e33f3c\" fill-opacity=\"0.501961\" points=\"28,96 4,104 2,77\" /><polygon fill=\"%23beb5bd\" fill-opacity=\"0.501961\" points=\"155,32 188,18 189,41\" /><polygon fill=\"%23140307\" fill-opacity=\"0.501961\" points=\"114,23 108,60 70,55\" /><polygon fill=\"%233d3e3f\" fill-opacity=\"0.501961\" points=\"60,-16 5,138 73,143\" /><polygon fill=\"%238c94ac\" fill-opacity=\"0.501961\" points=\"167,105 184,124 153,130\" /><polygon fill=\"%231c0d16\" fill-opacity=\"0.501961\" points=\"190,99 128,121 90,100\" /><polygon fill=\"%238c848d\" fill-opacity=\"0.501961\" points=\"106,137 194,161 193,137\" /><polygon fill=\"%23695763\" fill-opacity=\"0.501961\" points=\"120,-1 103,20 185,21\" /><polygon fill=\"%23a74e4f\" fill-opacity=\"0.501961\" points=\"135,18 111,44 139,51\" /><polygon fill=\"%23d9fcff\" fill-opacity=\"0.501961\" points=\"129,21 117,21 133,45\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"104,129 78,138 132,135\" /><polygon fill=\"%23e0ffff\" fill-opacity=\"0.501961\" points=\"146,67 153,16 136,28\" /><polygon fill=\"%237473ac\" fill-opacity=\"0.501961\" points=\"183,80 150,92 119,79\" /><polygon fill=\"%23000816\" fill-opacity=\"0.501961\" points=\"142,56 122,41 136,64\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-07.png",
+    "src": "/static/images/showcases/showcases-07.jpg",
     "width": 3836,
     "height": 2200,
-    "internalUrl": "a24"
+    "internalUrl": "a24",
+    "tags": ['news']
   },
   "hyper": {
     "title": "Hyper",
     "link": "https://hyper.is",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"730\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"730\" fill=\"%23030403\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"136,136 149,125 107,126\" /><polygon fill=\"%23515751\" fill-opacity=\"0.501961\" points=\"85,56 86,84 143,56\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"145,125 112,125 113,134\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"89,161 184,132 -16,133\" /><polygon fill=\"%23151515\" fill-opacity=\"0.501961\" points=\"72,102 175,104 153,36\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"145,130 123,132 140,124\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"110,127 9,-16 -16,159\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"249,-16 145,127 270,160\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"185,134 183,161 85,130\" /><polygon fill=\"%233a3d3a\" fill-opacity=\"0.501961\" points=\"121,58 110,79 84,51\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"152,161 141,103 271,132\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"260,-16 -13,16 253,76\" /><polygon fill=\"%230c0c0c\" fill-opacity=\"0.501961\" points=\"176,55 118,60 102,135\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"169,126 53,121 121,103\" /><polygon fill=\"%23fbfafb\" fill-opacity=\"0.501961\" points=\"127,132 134,126 112,127\" /><polygon fill=\"%2320341f\" fill-opacity=\"0.501961\" points=\"126,78 127,67 98,68\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"182,131 8,136 104,161\" /><polygon fill=\"%23faf9fa\" fill-opacity=\"0.501961\" points=\"113,127 111,132 120,131\" /><polygon fill=\"%230f120f\" fill-opacity=\"0.501961\" points=\"89,53 82,83 91,109\" /><polygon fill=\"%23eae9ea\" fill-opacity=\"0.501961\" points=\"144,126 128,128 144,132\" /><polygon fill=\"%233e3e3e\" fill-opacity=\"0.501961\" points=\"137,134 129,137 120,134\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"125,109 82,161 -16,90\" /><polygon fill=\"%234c4a4c\" fill-opacity=\"0.501961\" points=\"127,56 104,69 108,59\" /><polygon fill=\"%230f0e0f\" fill-opacity=\"0.501961\" points=\"82,103 169,105 170,48\" /><polygon fill=\"%230b0a0b\" fill-opacity=\"0.501961\" points=\"82,57 109,48 138,55\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"17,161 124,-14 -16,-1\" /><polygon fill=\"%239f9d9f\" fill-opacity=\"0.501961\" points=\"89,52 87,53 92,53\" /><polygon fill=\"%232d4058\" fill-opacity=\"0.501961\" points=\"101,78 95,77 96,83\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"252,84 143,155 146,118\" /><polygon fill=\"%23737073\" fill-opacity=\"0.501961\" points=\"128,56 132,58 124,58\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-08.png",
+    "src": "/static/images/showcases/showcases-08.jpg",
     "width": 3828,
     "height": 2198,
-    "internalUrl": "hyper"
+    "internalUrl": "hyper",
+    "tags": ["dev"]
   },
   "zeit": {
     "title": "ZEIT",
     "link": "https://zeit.co",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"730\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"730\" fill=\"%23ebebeb\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"144,76 167,17 72,20\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"173,54 95,56 103,10\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,30 97,-16 97,161\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"81,57 243,161 271,52\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"158,18 96,19 154,57\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"143,95 134,105 109,97\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"158,-12 271,7 161,161\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"99,18 97,55 157,53\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,-9 123,-16 9,161\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"158,50 98,18 157,19\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-5,161 -16,53 188,58\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"111,103 118,95 142,99\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"208,18 173,-16 47,18\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,42 173,161 155,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"19,104 163,102 244,161\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"150,56 98,55 99,19\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"96,-16 -16,4 100,129\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"157,22 158,55 112,19\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"143,102 133,96 121,102\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"267,-16 135,70 256,161\" /><polygon fill=\"%23f3f3f3\" fill-opacity=\"0.501961\" points=\"102,55 167,125 159,55\" /><polygon fill=\"%23fefefe\" fill-opacity=\"0.501961\" points=\"47,161 -16,93 245,111\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"173,-16 49,18 271,17\" /><polygon fill=\"%23c6c6c6\" fill-opacity=\"0.501961\" points=\"64,128 119,130 93,137\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,-16 160,15 158,126\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"99,21 157,55 98,55\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"141,102 121,96 140,96\" /><polygon fill=\"%23c2c2c2\" fill-opacity=\"0.501961\" points=\"103,82 154,82 125,90\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"98,72 -16,35 96,-1\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"131,102 114,101 118,97\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-09.png",
+    "src": "/static/images/showcases/showcases-09.jpg",
     "width": 3836,
     "height": 2198,
-    "internalUrl": "zeit"
+    "internalUrl": "zeit",
+    "tags": ["creative"]
   },
   "mozilla-vr": {
     "title": "Mozilla VR",
     "link": "https://mixedreality.mozilla.org",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"730\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"730\" fill=\"%23ebebeb\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"144,76 167,17 72,20\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"173,54 95,56 103,10\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,30 97,-16 97,161\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"81,57 243,161 271,52\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"158,18 96,19 154,57\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"143,95 134,105 109,97\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"158,-12 271,7 161,161\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"99,18 97,55 157,53\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-16,-9 123,-16 9,161\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"158,50 98,18 157,19\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-5,161 -16,53 188,58\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"111,103 118,95 142,99\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"208,18 173,-16 47,18\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,42 173,161 155,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"19,104 163,102 244,161\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"150,56 98,55 99,19\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"96,-16 -16,4 100,129\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"157,22 158,55 112,19\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"143,102 133,96 121,102\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"267,-16 135,70 256,161\" /><polygon fill=\"%23f3f3f3\" fill-opacity=\"0.501961\" points=\"102,55 167,125 159,55\" /><polygon fill=\"%23fefefe\" fill-opacity=\"0.501961\" points=\"47,161 -16,93 245,111\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"173,-16 49,18 271,17\" /><polygon fill=\"%23c6c6c6\" fill-opacity=\"0.501961\" points=\"64,128 119,130 93,137\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,-16 160,15 158,126\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"99,21 157,55 98,55\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"141,102 121,96 140,96\" /><polygon fill=\"%23c2c2c2\" fill-opacity=\"0.501961\" points=\"103,82 154,82 125,90\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"98,72 -16,35 96,-1\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"131,102 114,101 118,97\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-10.png",
+    "src": "/static/images/showcases/showcases-10.jpg",
     "width": 3830,
     "height": 2196,
-    "internalUrl": "mozilla-vr"
+    "internalUrl": "mozilla-vr",
+    "tags": ['dev', 'creative']
   },
   "avocode": {
     "title": "Avocode",
     "link": "https://avocode.com",
-    "data": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%221280%22%20height%3D%22735%22%3E%0D%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221280%22%20height%3D%22735%22%20fill%3D%22%23eff2f1%22%20%2F%3E%0D%0A%3Cg%20transform%3D%22scale%285.000000%29%20translate%280.5%200.5%29%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23105844%22%20fill-opacity%3D%220.501961%22%20points%3D%22146%2C22%20212%2C32%20146%2C76%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23008935%22%20fill-opacity%3D%220.501961%22%20points%3D%22195%2C44%20192%2C67%20165%2C66%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23050008%22%20fill-opacity%3D%220.501961%22%20points%3D%22147%2C31%20149%2C60%20169%2C23%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23009b55%22%20fill-opacity%3D%220.501961%22%20points%3D%2272%2C58%2090%2C68%2048%2C67%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%221%2C67%20271%2C72%20-16%2C145%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22173%2C-16%20271%2C-6%20241%2C162%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22170%2C57%20187%2C54%20175%2C34%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22136%2C42%20201%2C-16%20-16%2C1%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23aeabac%22%20fill-opacity%3D%220.501961%22%20points%3D%22114%2C128%2053%2C128%2058%2C144%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2266%2C118%20-16%2C49%2038%2C-16%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffbe46%22%20fill-opacity%3D%220.501961%22%20points%3D%22198%2C54%20191%2C29%20206%2C30%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230e9f60%22%20fill-opacity%3D%220.501961%22%20points%3D%22194%2C0%20207%2C6%20188%2C5%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2323c583%22%20fill-opacity%3D%220.501961%22%20points%3D%22165%2C33%20178%2C20%20196%2C45%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231b3dd0%22%20fill-opacity%3D%220.501961%22%20points%3D%22142%2C60%20157%2C70%20159%2C45%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22241%2C-16%20271%2C111%20162%2C110%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23bdbbbc%22%20fill-opacity%3D%220.501961%22%20points%3D%2277%2C41%2061%2C24%20122%2C24%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22162%2C90%20123%2C25%2071%2C89%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%232fac76%22%20fill-opacity%3D%220.501961%22%20points%3D%2289%2C60%2058%2C62%2083%2C68%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2329bc87%22%20fill-opacity%3D%220.501961%22%20points%3D%22158%2C47%20169%2C69%20187%2C66%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22175%2C162%20147%2C151%20178%2C144%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22135%2C54%2081%2C32%20155%2C19%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22182%2C40%20171%2C46%20177%2C58%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2263%2C43%20-8%2C-16%204%2C162%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22149%2C49%20118%2C-3%20118%2C94%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230b0000%22%20fill-opacity%3D%220.501961%22%20points%3D%22164%2C23%20170%2C27%20161%2C34%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2360c096%22%20fill-opacity%3D%220.501961%22%20points%3D%22260%2C142%20248%2C135%20244%2C143%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2332b073%22%20fill-opacity%3D%220.501961%22%20points%3D%22188%2C33%20181%2C66%20196%2C55%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23cd1fa1%22%20fill-opacity%3D%220.501961%22%20points%3D%22188%2C132%20187%2C136%20199%2C137%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22186%2C-16%2044%2C23%20190%2C23%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231b0506%22%20fill-opacity%3D%220.501961%22%20points%3D%22159%2C48%20146%2C49%20148%2C33%22%20%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E",
-    "src": "/static/images/showcases/avocode.png",
+    "src": "/static/images/showcases/avocode.jpg",
     "width": 3836,
     "height": 2204,
-    "internalUrl": "avocode"
+    "internalUrl": "avocode",
+    "tags": ['creative']
   },
   "iota-data-market": {
     "title": "IOTA Data Market",
     "link": "https://data.iota.org",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"730\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"730\" fill=\"%23d5deed\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23000f93\" fill-opacity=\"0.501961\" points=\"233,30 160,111 138,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"111,69 271,143 -16,145\" /><polygon fill=\"%23000a7c\" fill-opacity=\"0.501961\" points=\"137,61 213,61 167,98\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"201,40 130,56 199,61\" /><polygon fill=\"%23002ead\" fill-opacity=\"0.501961\" points=\"223,49 139,31 179,-12\" /><polygon fill=\"%23fffffc\" fill-opacity=\"0.501961\" points=\"180,-16 -6,155 -16,3\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"239,-16 181,161 271,137\" /><polygon fill=\"%230079fe\" fill-opacity=\"0.501961\" points=\"61,70 106,69 77,79\" /><polygon fill=\"%230026bf\" fill-opacity=\"0.501961\" points=\"144,57 153,85 159,22\" /><polygon fill=\"%23000d6e\" fill-opacity=\"0.501961\" points=\"199,70 210,16 223,41\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"201,51 157,63 157,41\" /><polygon fill=\"%230025ce\" fill-opacity=\"0.501961\" points=\"131,161 136,139 119,138\" /><polygon fill=\"%23fffffe\" fill-opacity=\"0.501961\" points=\"270,-1 202,0 236,57\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"194,91 37,118 271,161\" /><polygon fill=\"%23fcfef9\" fill-opacity=\"0.501961\" points=\"103,41 129,133 148,36\" /><polygon fill=\"%23e2fffe\" fill-opacity=\"0.501961\" points=\"183,27 123,10 122,-16\" /><polygon fill=\"%230043d5\" fill-opacity=\"0.501961\" points=\"222,-16 154,28 161,-7\" /><polygon fill=\"%230035a1\" fill-opacity=\"0.501961\" points=\"137,20 224,41 159,44\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"191,16 243,15 191,1\" /><polygon fill=\"%23000d31\" fill-opacity=\"0.501961\" points=\"209,52 210,65 186,72\" /><polygon fill=\"%2306a9d6\" fill-opacity=\"0.501961\" points=\"189,99 172,99 179,107\" /><polygon fill=\"%23fffffd\" fill-opacity=\"0.501961\" points=\"271,146 202,66 179,94\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"167,61 176,44 198,60\" /><polygon fill=\"%23003da2\" fill-opacity=\"0.501961\" points=\"174,96 202,65 142,64\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"190,124 7,161 -11,111\" /><polygon fill=\"%234babfa\" fill-opacity=\"0.501961\" points=\"60,76 102,68 101,80\" /><polygon fill=\"%23e7eae9\" fill-opacity=\"0.501961\" points=\"106,73 58,48 169,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"154,44 198,44 201,60\" /><polygon fill=\"%23ffffef\" fill-opacity=\"0.501961\" points=\"180,26 176,19 166,26\" /><polygon fill=\"%230f388b\" fill-opacity=\"0.501961\" points=\"141,34 175,18 141,20\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-12.png",
+    "src": "/static/images/showcases/showcases-12.jpg",
     "width": 3832,
     "height": 2200,
-    "internalUrl": "iota-data-market"
+    "internalUrl": "iota-data-market",
+    "tags": ['dev']
   },
   "expo": {
     "title": "Expo",
     "link": "https://expo.io",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"730\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"730\" fill=\"%23ebecf0\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"134,125 130,99 192,110\" /><polygon fill=\"%230000ae\" fill-opacity=\"0.501961\" points=\"88,75 130,64 116,46\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"222,-12 216,9 193,4\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"165,101 167,119 129,120\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"166,120 180,-9 271,72\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"131,119 130,105 165,102\" /><polygon fill=\"%230000e1\" fill-opacity=\"0.501961\" points=\"160,77 132,76 150,84\" /><polygon fill=\"%230000c4\" fill-opacity=\"0.501961\" points=\"44,59 54,46 40,47\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"70,66 59,73 72,72\" /><polygon fill=\"%23516c53\" fill-opacity=\"0.501961\" points=\"97,112 79,111 84,133\" /><polygon fill=\"%232f2ac4\" fill-opacity=\"0.501961\" points=\"114,73 120,48 76,74\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"79,71 -16,102 184,101\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"271,116 227,161 68,124\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"0,161 79,118 0,-16\" /><polygon fill=\"%230600dd\" fill-opacity=\"0.501961\" points=\"209,100 207,93 191,97\" /><polygon fill=\"%239595a0\" fill-opacity=\"0.501961\" points=\"136,22 154,37 197,23\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"260,-16 195,20 252,161\" /><polygon fill=\"%23ff9686\" fill-opacity=\"0.501961\" points=\"143,108 150,119 154,105\" /><polygon fill=\"%23fbffff\" fill-opacity=\"0.501961\" points=\"127,161 133,56 85,100\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"166,119 166,102 143,102\" /><polygon fill=\"%2300000a\" fill-opacity=\"0.501961\" points=\"197,1 217,2 193,9\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"72,26 77,31 69,31\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"210,10 35,-16 -16,37\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"222,29 166,157 168,83\" /><polygon fill=\"%23d0d0d2\" fill-opacity=\"0.501961\" points=\"92,71 32,35 105,48\" /><polygon fill=\"%23000000\" fill-opacity=\"0.501961\" points=\"135,118 148,102 131,104\" /><polygon fill=\"%233e3e53\" fill-opacity=\"0.501961\" points=\"54,65 48,72 58,73\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"255,2 161,-1 225,-16\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"134,21 92,-16 136,80\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-5,143 -5,-16 56,16\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-13.png",
+    "src": "/static/images/showcases/showcases-13.jpg",
     "width": 3830,
     "height": 2196,
-    "internalUrl": "expo"
+    "internalUrl": "expo",
+    "tags": ['dev', 'creative']
   },
   "sumup": {
     "title": "Sumup",
     "link": "https://sumup.com",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"730\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"730\" fill=\"%23e8e8ec\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%2394201a\" fill-opacity=\"0.501961\" points=\"195,10 166,66 228,22\" /><polygon fill=\"%23788cb1\" fill-opacity=\"0.501961\" points=\"131,33 62,29 63,77\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"-15,140 271,40 253,161\" /><polygon fill=\"%23a17b78\" fill-opacity=\"0.501961\" points=\"224,-6 179,63 223,40\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"2,-16 83,161 -15,149\" /><polygon fill=\"%23d7dbe6\" fill-opacity=\"0.501961\" points=\"148,31 26,85 227,87\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"231,161 224,-16 271,2\" /><polygon fill=\"%232468ff\" fill-opacity=\"0.501961\" points=\"58,60 86,54 88,65\" /><polygon fill=\"%237a3525\" fill-opacity=\"0.501961\" points=\"212,35 199,16 192,40\" /><polygon fill=\"%23cacedb\" fill-opacity=\"0.501961\" points=\"32,2 88,3 32,88\" /><polygon fill=\"%2386878d\" fill-opacity=\"0.501961\" points=\"141,53 126,66 120,86\" /><polygon fill=\"%23cdd7dc\" fill-opacity=\"0.501961\" points=\"194,101 50,100 126,121\" /><polygon fill=\"%23e5e7ef\" fill-opacity=\"0.501961\" points=\"133,-15 249,-7 106,64\" /><polygon fill=\"%23cbd6df\" fill-opacity=\"0.501961\" points=\"233,32 198,41 188,83\" /><polygon fill=\"%23e5e7ec\" fill-opacity=\"0.501961\" points=\"170,48 62,53 239,92\" /><polygon fill=\"%234f5e69\" fill-opacity=\"0.501961\" points=\"117,47 109,51 95,46\" /><polygon fill=\"%233d2b13\" fill-opacity=\"0.501961\" points=\"223,25 206,28 223,17\" /><polygon fill=\"%23546474\" fill-opacity=\"0.501961\" points=\"78,7 61,10 62,4\" /><polygon fill=\"%23e09078\" fill-opacity=\"0.501961\" points=\"175,45 227,10 195,10\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"9,140 271,93 251,161\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"23,161 -16,23 31,-16\" /><polygon fill=\"%23f6ffff\" fill-opacity=\"0.501961\" points=\"271,39 242,25 204,31\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"125,83 155,129 148,53\" /><polygon fill=\"%23e9527d\" fill-opacity=\"0.501961\" points=\"177,50 200,35 191,56\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"140,86 45,89 99,102\" /><polygon fill=\"%23959b9f\" fill-opacity=\"0.501961\" points=\"64,28 59,41 106,42\" /><polygon fill=\"%239ba6b0\" fill-opacity=\"0.501961\" points=\"136,99 106,101 117,106\" /><polygon fill=\"%23d9dae2\" fill-opacity=\"0.501961\" points=\"33,89 30,63 103,64\" /><polygon fill=\"%23551c08\" fill-opacity=\"0.501961\" points=\"206,18 196,19 195,27\" /><polygon fill=\"%23e0568c\" fill-opacity=\"0.501961\" points=\"175,49 186,23 195,39\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-14.png",
+    "src": "/static/images/showcases/showcases-14.jpg",
     "width": 3830,
     "height": 2194,
-    "internalUrl": "sumup"
+    "internalUrl": "sumup",
+    "tags": ['finance']
   },
   "hashnode": {
     "title": "Hashnode",
     "link": "https://hashnode.com",
-    "data": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"1280\" height=\"730\"><rect x=\"0\" y=\"0\" width=\"1280\" height=\"730\" fill=\"%23ebeef3\" /><g transform=\"scale(5.000000) translate(0.5 0.5)\"><polygon fill=\"%23859dc4\" fill-opacity=\"0.501961\" points=\"84,54 218,46 217,8\" /><polygon fill=\"%23fefcfc\" fill-opacity=\"0.501961\" points=\"5,-16 259,161 -16,139\" /><polygon fill=\"%237ca494\" fill-opacity=\"0.501961\" points=\"107,28 70,36 55,25\" /><polygon fill=\"%234cbb7a\" fill-opacity=\"0.501961\" points=\"49,7 71,0 80,8\" /><polygon fill=\"%232637b0\" fill-opacity=\"0.501961\" points=\"148,55 135,47 145,40\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"126,10 96,17 159,89\" /><polygon fill=\"%23c9c8c6\" fill-opacity=\"0.501961\" points=\"55,99 97,117 151,101\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"183,72 153,12 176,24\" /><polygon fill=\"%237882b4\" fill-opacity=\"0.501961\" points=\"217,42 216,18 182,40\" /><polygon fill=\"%23c9c9ca\" fill-opacity=\"0.501961\" points=\"187,138 187,72 210,134\" /><polygon fill=\"%2330c954\" fill-opacity=\"0.501961\" points=\"104,47 124,46 122,54\" /><polygon fill=\"%23f9f7f9\" fill-opacity=\"0.501961\" points=\"166,42 141,134 224,43\" /><polygon fill=\"%239ba6d3\" fill-opacity=\"0.501961\" points=\"177,15 217,17 176,43\" /><polygon fill=\"%23994447\" fill-opacity=\"0.501961\" points=\"64,142 58,135 68,139\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"43,152 43,-7 -16,109\" /><polygon fill=\"%237883c4\" fill-opacity=\"0.501961\" points=\"161,53 167,33 146,53\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"114,15 134,48 95,43\" /><polygon fill=\"%23b9d1f7\" fill-opacity=\"0.501961\" points=\"149,54 166,26 137,20\" /><polygon fill=\"%23e5e5f3\" fill-opacity=\"0.501961\" points=\"271,15 66,14 158,-16\" /><polygon fill=\"%23ebedf3\" fill-opacity=\"0.501961\" points=\"41,157 47,-15 89,111\" /><polygon fill=\"%239d9f9d\" fill-opacity=\"0.501961\" points=\"29,4 31,9 12,5\" /><polygon fill=\"%23b9b6b4\" fill-opacity=\"0.501961\" points=\"211,81 188,81 192,94\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"165,74 166,54 94,55\" /><polygon fill=\"%2353cb75\" fill-opacity=\"0.501961\" points=\"102,53 104,47 124,51\" /><polygon fill=\"%2394aaa5\" fill-opacity=\"0.501961\" points=\"72,27 107,26 88,35\" /><polygon fill=\"%23fffffe\" fill-opacity=\"0.501961\" points=\"194,113 217,42 219,118\" /><polygon fill=\"%23a3a1a2\" fill-opacity=\"0.501961\" points=\"209,105 203,98 187,105\" /><polygon fill=\"%23dbdbda\" fill-opacity=\"0.501961\" points=\"120,100 162,115 83,114\" /><polygon fill=\"%23fffffe\" fill-opacity=\"0.501961\" points=\"95,67 13,34 109,34\" /><polygon fill=\"%23ffffff\" fill-opacity=\"0.501961\" points=\"169,115 53,116 156,161\" /></g></svg>",
-    "src": "/static/images/showcases/showcases-15.png",
+    "src": "/static/images/showcases/showcases-15.jpg",
     "width": 3830,
     "height": 2194,
-    "internalUrl": "hashnode"
+    "internalUrl": "hashnode",
+    "tags": ["dev"]
   },
   "invision": {
     "title": "Invision",
-    "link": "https://www.invisionapp.com/",
-    "data": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%221280%22%20height%3D%22735%22%3E%0D%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221280%22%20height%3D%22735%22%20fill%3D%22%23514c49%22%20%2F%3E%0D%0A%3Cg%20transform%3D%22scale%285.000000%29%20translate%280.5%200.5%29%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C130%2039%2C129%20157%2C162%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2217%2C162%20-16%2C126%20146%2C132%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22237%2C162%20115%2C133%20271%2C128%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231e1a0e%22%20fill-opacity%3D%220.501961%22%20points%3D%222%2C-16%20-15%2C137%20271%2C11%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2227%2C162%20-16%2C127%20146%2C140%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22123%2C162%202%2C130%20197%2C129%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ff2a77%22%20fill-opacity%3D%220.501961%22%20points%3D%22108%2C95%20151%2C89%20139%2C103%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23242322%22%20fill-opacity%3D%220.501961%22%20points%3D%22123%2C87%20271%2C130%20250%2C-16%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22240%2C162%20121%2C130%20271%2C129%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2271%2C146%20-13%2C154%20-10%2C127%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231e150d%22%20fill-opacity%3D%220.501961%22%20points%3D%221%2C96%20118%2C103%20-16%2C6%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%233d3e44%22%20fill-opacity%3D%220.501961%22%20points%3D%2212%2C96%2066%2C128%20-10%2C129%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23140d0f%22%20fill-opacity%3D%220.501961%22%20points%3D%22165%2C-6%20216%2C19%20252%2C-2%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C131%20209%2C162%2098%2C129%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ff3468%22%20fill-opacity%3D%220.501961%22%20points%3D%22118%2C103%20106%2C92%20150%2C90%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230b0508%22%20fill-opacity%3D%220.501961%22%20points%3D%2286%2C101%20105%2C76%20134%2C84%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23474741%22%20fill-opacity%3D%220.501961%22%20points%3D%2239%2C52%20148%2C-16%20255%2C54%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%233c3d42%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C128%2071%2C83%20197%2C128%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22122%2C73%20130%2C76%20128%2C81%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22112%2C135%20105%2C137%20112%2C138%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000003%22%20fill-opacity%3D%220.501961%22%20points%3D%22206%2C85%20194%2C54%20180%2C95%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%234f5041%22%20fill-opacity%3D%220.501961%22%20points%3D%2233%2C4%2081%2C73%2079%2C-16%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22130%2C144%20271%2C129%20242%2C162%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231f1817%22%20fill-opacity%3D%220.501961%22%20points%3D%22176%2C77%20104%2C72%20184%2C56%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23424242%22%20fill-opacity%3D%220.501961%22%20points%3D%22228%2C131%20226%2C138%20219%2C141%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22126%2C129%20-1%2C129%203%2C162%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%237b776c%22%20fill-opacity%3D%220.501961%22%20points%3D%2298%2C48%2066%2C56%2043%2C47%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2326231f%22%20fill-opacity%3D%220.501961%22%20points%3D%2253%2C47%20105%2C9%20116%2C45%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23717171%22%20fill-opacity%3D%220.501961%22%20points%3D%2259%2C141%2082%2C137%2065%2C135%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%236a6a6a%22%20fill-opacity%3D%220.501961%22%20points%3D%22182%2C140%20178%2C134%20191%2C137%22%20%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E",
-    "src": "/static/images/showcases/showcases-16.png",
+    "link": "https://www.invisionapp.com",
+    "src": "/static/images/showcases/showcases-16.jpg",
     "width": 3830,
     "height": 2200,
-    "internalUrl": "invision"
+    "internalUrl": "invision",
+    "tags": ["dev", "creative"]
   },
   "hulu": {
     "title": "Hulu",
     "link": "https://www.hulu.com",
-    "data": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%221280%22%20height%3D%22730%22%3E%0D%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221280%22%20height%3D%22730%22%20fill%3D%22%234a6976%22%20%2F%3E%0D%0A%3Cg%20transform%3D%22scale%285.000000%29%20translate%280.5%200.5%29%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffd4%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C99%20158%2C102%20248%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2223%2C161%20-16%2C131%2019%2C80%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%238c411a%22%20fill-opacity%3D%220.501961%22%20points%3D%22229%2C138%20193%2C88%207%2C149%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230a3b72%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C-7%206%2C101%20-11%2C-5%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C100%20216%2C101%20245%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C103%2020%2C161%2020%2C98%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23dddcb3%22%20fill-opacity%3D%220.501961%22%20points%3D%22211%2C115%20215%2C154%20162%2C157%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23221c19%22%20fill-opacity%3D%220.501961%22%20points%3D%2259%2C125%20164%2C95%20163%2C124%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231f6b8d%22%20fill-opacity%3D%220.501961%22%20points%3D%2266%2C7%20-16%2C75%2098%2C154%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2313262f%22%20fill-opacity%3D%220.501961%22%20points%3D%22105%2C26%20227%2C0%20-16%2C-15%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%232c6b7f%22%20fill-opacity%3D%220.501961%22%20points%3D%22209%2C104%20-16%2C81%20271%2C-3%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23c18c6e%22%20fill-opacity%3D%220.501961%22%20points%3D%2299%2C150%2028%2C137%2051%2C119%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffe7c3%22%20fill-opacity%3D%220.501961%22%20points%3D%22143%2C98%20147%2C107%20115%2C101%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2314662e%22%20fill-opacity%3D%220.501961%22%20points%3D%22112%2C99%2089%2C137%2020%2C109%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23bf834f%22%20fill-opacity%3D%220.501961%22%20points%3D%22228%2C117%20164%2C148%20167%2C100%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C103%20220%2C99%20251%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C134%2014%2C101%2024%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23cf7b57%22%20fill-opacity%3D%220.501961%22%20points%3D%22117%2C122%20127%2C161%20143%2C121%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2379ffbb%22%20fill-opacity%3D%220.501961%22%20points%3D%22145%2C55%20136%2C63%20106%2C54%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23190000%22%20fill-opacity%3D%220.501961%22%20points%3D%22204%2C124%20200%2C95%20192%2C112%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23481a26%22%20fill-opacity%3D%220.501961%22%20points%3D%22131%2C158%2096%2C93%2087%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%232e5b93%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C10%20-8%2C100%20215%2C99%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23002b32%22%20fill-opacity%3D%220.501961%22%20points%3D%2224%2C115%2060%2C115%2020%2C136%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23e3b89e%22%20fill-opacity%3D%220.501961%22%20points%3D%2244%2C151%2024%2C149%2030%2C127%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%234be0c5%22%20fill-opacity%3D%220.501961%22%20points%3D%22164%2C141%20233%2C140%20173%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23315c53%22%20fill-opacity%3D%220.501961%22%20points%3D%22116%2C17%20271%2C-9%20270%2C45%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231c161b%22%20fill-opacity%3D%220.501961%22%20points%3D%22163%2C95%20124%2C161%20163%2C132%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23299d60%22%20fill-opacity%3D%220.501961%22%20points%3D%2292%2C96%2093%2C128%2023%2C102%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%231f141d%22%20fill-opacity%3D%220.501961%22%20points%3D%2268%2C133%2054%2C111%2061%2C144%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23dcc1b0%22%20fill-opacity%3D%220.501961%22%20points%3D%2273%2C129%2096%2C161%2058%2C158%22%20%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E",
-    "src": "/static/images/showcases/showcases-17.png",
+    "src": "/static/images/showcases/showcases-17.jpg",
     "width": 3832,
     "height": 2198,
-    "internalUrl": "hulu"
+    "internalUrl": "hulu",
+    "tags": ['entertainment']
   },
   "design-better": {
     "title": "DesignBetter.co",
-    "link": "https://www.designbetter.co/",
-    "data": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%221280%22%20height%3D%22730%22%3E%0D%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221280%22%20height%3D%22730%22%20fill%3D%22%230531c0%22%20%2F%3E%0D%0A%3Cg%20transform%3D%22scale%285.000000%29%20translate%280.5%200.5%29%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22143%2C91%20133%2C100%20103%2C92%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23647fd8%22%20fill-opacity%3D%220.501961%22%20points%3D%2277%2C65%20173%2C64%20139%2C81%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230732bf%22%20fill-opacity%3D%220.501961%22%20points%3D%22149%2C94%2089%2C70%20168%2C69%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23002abc%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C100%20116%2C87%20100%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23b4c1ec%22%20fill-opacity%3D%220.501961%22%20points%3D%22105%2C70%2089%2C67%20107%2C65%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22146%2C96%20120%2C98%20116%2C88%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23002bbc%22%20fill-opacity%3D%220.501961%22%20points%3D%22271%2C96%20141%2C91%20152%2C161%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23153ec4%22%20fill-opacity%3D%220.501961%22%20points%3D%2290%2C68%2072%2C98%20181%2C80%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2395a9e8%22%20fill-opacity%3D%220.501961%22%20points%3D%22122%2C69%20144%2C62%20159%2C68%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23012dbe%22%20fill-opacity%3D%220.501961%22%20points%3D%22226%2C146%20255%2C101%2091%2C98%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22139%2C90%20117%2C93%20139%2C98%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230f3ac4%22%20fill-opacity%3D%220.501961%22%20points%3D%22117%2C78%20142%2C66%20174%2C110%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23677bc9%22%20fill-opacity%3D%220.501961%22%20points%3D%22134%2C57%20127%2C62%20124%2C48%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23002dc1%22%20fill-opacity%3D%220.501961%22%20points%3D%22112%2C88%208%2C63%20129%2C130%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23a9baee%22%20fill-opacity%3D%220.501961%22%20points%3D%2286%2C64%2085%2C72%2090%2C66%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23002bbc%22%20fill-opacity%3D%220.501961%22%20points%3D%22-3%2C27%20107%2C114%2081%2C58%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23002dc1%22%20fill-opacity%3D%220.501961%22%20points%3D%2289%2C50%20146%2C63%2094%2C65%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23002abc%22%20fill-opacity%3D%220.501961%22%20points%3D%22200%2C18%20140%2C67%20119%2C18%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%239bace5%22%20fill-opacity%3D%220.501961%22%20points%3D%22172%2C69%20157%2C63%20145%2C69%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230028b4%22%20fill-opacity%3D%220.501961%22%20points%3D%22179%2C58%20126%2C34%2063%2C42%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230432c4%22%20fill-opacity%3D%220.501961%22%20points%3D%22126%2C-16%20133%2C65%20163%2C65%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23b5c3f0%22%20fill-opacity%3D%220.501961%22%20points%3D%22110%2C65%20116%2C68%20101%2C69%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23012fc2%22%20fill-opacity%3D%220.501961%22%20points%3D%2246%2C89%2098%2C107%20122%2C86%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230027b7%22%20fill-opacity%3D%220.501961%22%20points%3D%22123%2C79%20157%2C69%2096%2C70%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23fafbfe%22%20fill-opacity%3D%220.501961%22%20points%3D%22129%2C93%20113%2C99%20118%2C91%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23022fc0%22%20fill-opacity%3D%220.501961%22%20points%3D%22183%2C105%2035%2C161%20107%2C97%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23294ec8%22%20fill-opacity%3D%220.501961%22%20points%3D%22162%2C76%20119%2C90%2088%2C75%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%234c6dd7%22%20fill-opacity%3D%220.501961%22%20points%3D%2228%2C9%2011%2C5%207%2C10%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%230026b1%22%20fill-opacity%3D%220.501961%22%20points%3D%22194%2C58%20246%2C37%20129%2C41%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%232a53d1%22%20fill-opacity%3D%220.501961%22%20points%3D%22244%2C130%20249%2C139%20251%2C112%22%20%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E",
-    "src": "/static/images/showcases/showcases-18.png",
+    "link": "https://www.designbetter.co",
+    "src": "/static/images/showcases/showcases-18.jpg",
     "width": 3832,
     "height": 2194,
-    "internalUrl": "design-better"
+    "internalUrl": "design-better",
+    "tags": ["dev", "creative"]
   },
   "weedmaps": {
     "title": "Weedmaps",
     "link": "https://weedmaps.com",
-    "data": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%221280%22%20height%3D%22720%22%3E%0D%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221280%22%20height%3D%22720%22%20fill%3D%22%23d4dfdc%22%20%2F%3E%0D%0A%3Cg%20transform%3D%22scale%285.000000%29%20translate%280.5%200.5%29%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22134%2C6%20213%2C-16%20271%2C6%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22173%2C72%20174%2C105%20115%2C89%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%2232%2C-16%20-16%2C6%2077%2C6%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2300baa4%22%20fill-opacity%3D%220.501961%22%20points%3D%22252%2C52%20154%2C39%20271%2C21%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22126%2C35%20150%2C11%20120%2C15%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%2211%2C159%20-16%2C86%20271%2C112%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22132%2C8%20-8%2C144%20-16%2C6%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22145%2C4%20207%2C-16%20271%2C6%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2300bcac%22%20fill-opacity%3D%220.501961%22%20points%3D%22149%2C49%20130%2C32%2087%2C48%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22262%2C159%20271%2C47%20146%2C53%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23020000%22%20fill-opacity%3D%220.501961%22%20points%3D%22176%2C75%20149%2C106%20147%2C74%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C6%2057%2C-16%2066%2C4%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2300c5b6%22%20fill-opacity%3D%220.501961%22%20points%3D%22168%2C35%20271%2C52%20264%2C24%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22123%2C51%20145%2C116%20148%2C59%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22172%2C1%20128%2C-16%2068%2C-1%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%233c3334%22%20fill-opacity%3D%220.501961%22%20points%3D%2250%2C83%2064%2C100%2075%2C82%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22123%2C17%20146%2C13%20130%2C33%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23070000%22%20fill-opacity%3D%220.501961%22%20points%3D%2286%2C139%2094%2C130%2084%2C129%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23af5700%22%20fill-opacity%3D%220.501961%22%20points%3D%22113%2C86%20134%2C75%20132%2C102%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.501961%22%20points%3D%22196%2C31%20270%2C6%20162%2C7%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23000000%22%20fill-opacity%3D%220.501961%22%20points%3D%22148%2C100%20173%2C101%20173%2C79%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23fffdf5%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C50%20135%2C39%20102%2C7%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2300ccbd%22%20fill-opacity%3D%220.501961%22%20points%3D%22254%2C24%20271%2C48%20184%2C47%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23fffefd%22%20fill-opacity%3D%220.501961%22%20points%3D%22-16%2C50%20112%2C88%20204%2C48%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23fffffb%22%20fill-opacity%3D%220.501961%22%20points%3D%22199%2C159%20271%2C102%20107%2C101%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23ff7600%22%20fill-opacity%3D%220.501961%22%20points%3D%2255%2C37%2048%2C31%2072%2C32%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%238d6569%22%20fill-opacity%3D%220.501961%22%20points%3D%22179%2C37%20167%2C12%20206%2C49%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23eaf9f7%22%20fill-opacity%3D%220.501961%22%20points%3D%22158%2C7%20140%2C41%20208%2C56%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%2300d1c1%22%20fill-opacity%3D%220.501961%22%20points%3D%22107%2C43%2082%2C52%2065%2C46%22%20%2F%3E%0D%0A%3Cpolygon%20fill%3D%22%23221f04%22%20fill-opacity%3D%220.501961%22%20points%3D%22124%2C134%20123%2C126%20114%2C136%22%20%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E",
-    "src": "/static/images/showcases/showcases-19.png",
+    "src": "/static/images/showcases/showcases-19.jpg",
     "width": 1920,
     "height": 1081,
-    "internalUrl": "weedmaps"
+    "internalUrl": "weedmaps",
+    "tags": ["e-commerce"]
   },
   "sanity": {
     "title": "Sanity.io",
     "link": "https://sanity.io",
-    "data": "data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIj4NCjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIgZmlsbD0iI2RhZDlkOSIgLz4NCjxnIHRyYW5zZm9ybT0ic2NhbGUoNS4wMDAwMDApIHRyYW5zbGF0ZSgwLjUgMC41KSI+DQo8cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjEyMiw5MiAxMjUsMiAxNTAsMTAzIiAvPg0KPHBvbHlnb24gZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjUwMTk2MSIgcG9pbnRzPSI4OCw5MyA0NSwxMDYgLTIsOTIiIC8+DQo8cG9seWdvbiBmaWxsPSIjNDk0YTRhIiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjEwLDU4IDEwMCw2MCAxMSwxNCIgLz4NCjxwb2x5Z29uIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC41MDE5NjEiIHBvaW50cz0iMjM5LDUzIDIyNiwxMDAgMjI1LDQiIC8+DQo8cG9seWdvbiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9Ii0xNiwxNTQgMjcxLDE0MCA5OCw4NCIgLz4NCjxwb2x5Z29uIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC41MDE5NjEiIHBvaW50cz0iMjMyLC0xNiAyMzMsMTU5IDI3MSw0NSIgLz4NCjxwb2x5Z29uIGZpbGw9IiMwNTA2MDYiIGZpbGwtb3BhY2l0eT0iMC41MDE5NjEiIHBvaW50cz0iNjYsMzIgOTMsMjEgMjksMjMiIC8+DQo8cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjEyOCw5MyAxMjIsMTcgMTQwLDMzIiAvPg0KPHBvbHlnb24gZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjUwMTk2MSIgcG9pbnRzPSItMTYsMjIgMTkwLDEzIDYwLC0xNiIgLz4NCjxwb2x5Z29uIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC41MDE5NjEiIHBvaW50cz0iMTgyLDkxIDIzNSw4OSAyMDcsOTgiIC8+DQo8cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjkxLDEwMyA1NCw5MSAxNiwxMDAiIC8+DQo8cG9seWdvbiBmaWxsPSIjMjkzMTM1IiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjE4Nyw1MyAxNjMsMzQgMTQ3LDUzIiAvPg0KPHBvbHlnb24gZmlsbD0iIzQyNDM0NCIgZmlsbC1vcGFjaXR5PSIwLjUwMTk2MSIgcG9pbnRzPSIxMjIsMTUgMTY0LDI5IDIxMSwxNyIgLz4NCjxwb2x5Z29uIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC41MDE5NjEiIHBvaW50cz0iMjIwLDIxIDEyNywyMCAyMjMsNjQiIC8+DQo8cG9seWdvbiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjI2MSw5OCAxOSwxMDIgMjQ2LDE1OSIgLz4NCjxwb2x5Z29uIGZpbGw9IiNmY2ZkZmQiIGZpbGwtb3BhY2l0eT0iMC41MDE5NjEiIHBvaW50cz0iMTM4LDUzIDEzOCw5MCAyMTgsOTEiIC8+DQo8cG9seWdvbiBmaWxsPSIjZmYxZDA0IiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjM5LDEyMiAtNSwxMTIgNDIsMTA5IiAvPg0KPHBvbHlnb24gZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjUwMTk2MSIgcG9pbnRzPSIxMjIsLTEyIDg1LDM0IDEyMiwxNTkiIC8+DQo8cG9seWdvbiBmaWxsPSIjMzkzOTM5IiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjE3NSwxMTkgMTQ4LDExMyAxODgsMTA5IiAvPg0KPHBvbHlnb24gZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjUwMTk2MSIgcG9pbnRzPSIyMjYsMTkgMTk5LDIwIDIwNiwxNCIgLz4NCjxwb2x5Z29uIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC41MDE5NjEiIHBvaW50cz0iMjcxLDE2IDE5MCwtMTYgNzEsMTYiIC8+DQo8cG9seWdvbiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjUwLDk0IDgsMTAyIDEyLDkxIiAvPg0KPHBvbHlnb24gZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjUwMTk2MSIgcG9pbnRzPSItMTYsMTE0IDEyLDE1OSA4LDE3IiAvPg0KPHBvbHlnb24gZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjUwMTk2MSIgcG9pbnRzPSIxMjMsMzkgMTI0LDk1IDEzOSw5MyIgLz4NCjxwb2x5Z29uIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC41MDE5NjEiIHBvaW50cz0iMTgyLDcyIDE4MiwxMDggMTg4LDk0IiAvPg0KPHBvbHlnb24gZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjUwMTk2MSIgcG9pbnRzPSI1Nyw0NiA5LDQ0IDMxLDUyIiAvPg0KPHBvbHlnb24gZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjUwMTk2MSIgcG9pbnRzPSIyMzMsOTUgMjMxLDYxIDIyNCw5NCIgLz4NCjxwb2x5Z29uIGZpbGw9IiMxMzEzMTMiIGZpbGwtb3BhY2l0eT0iMC41MDE5NjEiIHBvaW50cz0iMTgsMzYgNjgsMzcgNDcsNDUiIC8+DQo8cG9seWdvbiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjMwLDM3IDcsMzEgNDksMzAiIC8+DQo8cG9seWdvbiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuNTAxOTYxIiBwb2ludHM9IjEwNCw3NiAtMTYsNzYgNTUsNTYiIC8+DQo8L2c+DQo8L3N2Zz4=",
-    "src": "/static/images/showcases/showcases-20.png",
+    "src": "/static/images/showcases/showcases-20.jpg",
     "width": 3840,
     "height": 2162,
     "internalUrl": "sanity"
@@ -245,6 +557,9 @@ const mapping = {
 }
 
 module.exports = {
+  categories,
+  categoriesShort,
   sortOrder,
+  frontSortOrder,
   mapping
 }

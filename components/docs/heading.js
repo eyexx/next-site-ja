@@ -1,4 +1,15 @@
-import PermalinkIcon from '../icons/permalink'
+// import PermalinkIcon from '../icons/permalink'
+import slugify from '@sindresorhus/slugify'
+
+const PermalinkIcon = () => <span>
+  <svg viewBox="0 0 16 16" width="16" height="16">
+    <title>permalink</title>
+    <g strokeWidth="1" fill="#000000" stroke="#000000">
+      <path fill="none" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M8.995,7.005 L8.995,7.005c1.374,1.374,1.374,3.601,0,4.975l-1.99,1.99c-1.374,1.374-3.601,1.374-4.975,0l0,0c-1.374-1.374-1.374-3.601,0-4.975 l1.748-1.698" />
+      <path fill="none" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M7.005,8.995 L7.005,8.995c-1.374-1.374-1.374-3.601,0-4.975l1.99-1.99c1.374-1.374,3.601-1.374,4.975,0l0,0c1.374,1.374,1.374,3.601,0,4.975 l-1.748,1.698" />
+    </g>
+  </svg>
+</span>
 
 class Heading extends React.Component {
   render() {
@@ -32,7 +43,7 @@ export default props => {
         .join('')
     }
 
-    id = text.toLowerCase().replace(/\s/g, '-').replace(/[?!]/g, '')
+    id = slugify(text)
   }
 
   const targetStyle =
@@ -45,7 +56,7 @@ export default props => {
       component={component}
       data-components-heading
     >
-      <span id={id} className="target" style={targetStyle} />
+      <span id={id} className="target docs-anchor-target" style={targetStyle} />
       <a href={'#' + id}>
         {children}
       </a>
@@ -55,13 +66,12 @@ export default props => {
       <style jsx>
         {`
           a {
-            border-bottom: 1px solid transparent;
             color: inherit;
-            text-decoration: none;
           }
 
           a:hover {
-            border-bottom-color: inherit;
+            color: inherit;
+            text-decoration: underline;
           }
 
           :global(h1[data-components-heading]) a::before {
@@ -89,8 +99,8 @@ export default props => {
 
           .target {
             display: block;
-            margin-top: -20px;
-            padding-top: 20px;
+            margin-top: -128px;
+            padding-top: 128px;
             visibility: hidden;
             position: absolute;
           }

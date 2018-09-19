@@ -1,41 +1,35 @@
 export const Code = ({ children, syntax }) => (
-  <pre className={(syntax ? ` ${syntax}` : '')}>
+  <pre className={syntax ? ` ${syntax}` : ''}>
     <code>{children}</code>
     <style jsx>
       {`
         pre {
-          border: 1px solid #eaeaea;
-          padding: 20px;
+          padding: 1.25rem;
           margin: 40px 0;
+          border: 1px solid #eaeaea;
           white-space: pre;
           overflow: auto;
           -webkit-overflow-scrolling: touch;
         }
 
         code {
-          color: #000000;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-            serif;
-          font-size: 13px;
+          font-size: 14px;
           line-height: 20px;
         }
       `}
     </style>
   </pre>
-)
+);
 
-export const InlineCode = ({ children, noWrap }) => (
-  <code className={noWrap && 'no-wrap'}>
+export const InlineCode = ({ children, wrap = false }) => (
+  <code className={wrap && 'wrap'}>
     {children}
     <style jsx>
       {`
         code {
-          color: #000000;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-            serif;
-          font-size: 0.9em;
+          color: rgb(212, 0, 255);
+          // color: #ca0e0e;
+          font-size: 0.875em;
           white-space: pre-wrap;
         }
 
@@ -50,7 +44,14 @@ export const InlineCode = ({ children, noWrap }) => (
         code::after {
           content: '\`';
         }
+
+        :global(h2) code,
+        :global(h3) code,
+        :global(h4) code {
+          font-size: unset;
+          color: inherit;
+        }
       `}
     </style>
   </code>
-)
+);
