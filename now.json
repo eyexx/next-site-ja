@@ -5,7 +5,16 @@
     "directoryListing": false,
     "headers": [
       {
-        "source": "/_next/webpack/chunks/*",
+        "source": "/_next/static/chunks/*",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/_next/static/runtime/*",
         "headers": [
           {
             "key": "Cache-Control",
@@ -23,7 +32,25 @@
         ]
       },
       {
-        "source": "/_next/*/page/**/*.js",
+        "source": "/static/favicon/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/static/images/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/_next/static/*/pages/**/*.js",
         "headers": [
           {
             "key": "Cache-Control",
