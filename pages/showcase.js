@@ -34,7 +34,7 @@ function Showcase({ router }) {
       <SiteDetail siteData={mapping[item]} from={from} />
       <MediaQueryConsumer>
         {({ isMobile }) => (
-          <Tabs data={categories}>
+          <Tabs data={categories} anchor>
             {(onSelect, selectedId) => (
               <>
                 <Header

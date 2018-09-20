@@ -1,13 +1,28 @@
 import { PureComponent } from 'react';
+import Router from 'next/router';
+import slugify from '@sindresorhus/slugify';
 
 import withPure from './hoc/pure';
 
 export default class Tabs extends PureComponent {
   constructor(props) {
     super();
+
     this.state = {
       selected: props.data[0]
     };
+  }
+  componentDidMount() {
+    if (this.props.anchor) {
+      let index = this.props.data
+        .map(slugify)
+        .indexOf(window.location.hash.slice(1));
+      if (index !== -1) {
+        this.setState({
+          selected: this.props.data[index]
+        });
+      }
+    }
   }
 
   onSelect = id => {
@@ -16,6 +31,17 @@ export default class Tabs extends PureComponent {
     }
     if (this.state.selected === id) {
       return;
+    }
+    if (this.props.anchor) {
+      // wait 300ms for re-render
+      // for the performance reason
+      setTimeout(() => {
+        Router.replace(
+          window.location.pathname,
+          window.location.pathname + '#' + slugify(id),
+          { shallow: true }
+        );
+      }, 300);
     }
     this.setState({
       selected: id
@@ -31,7 +57,7 @@ export default class Tabs extends PureComponent {
   }
 
   render() {
-    const { data, children } = this.props;
+    const { data, anchor, children } = this.props;
     if (!data.length) {
       return null;
     }
@@ -48,25 +74,3 @@ export default class Tabs extends PureComponent {
     return children(this.onSelect, selected, index);
   }
 }
-
-export const Indicator = withPure(({ selected, onClick }) => (
-  <div onClick={onClick}>
-    <style jsx>
-      {`
-         {
-          display: inline-block;
-          width: 10px;
-          height: 10px;
-          margin: 0 5px;
-          border-radius: 50%;
-          transition: background 0.2s ease;
-          background: ${selected ? '#EEEEEE' : '#909090'};
-          cursor: pointer;
-        }
-        div:hover {
-          background: ${selected ? '#EEEEEE' : '#AAAAAA'};
-        }
-      `}
-    </style>
-  </div>
-));
