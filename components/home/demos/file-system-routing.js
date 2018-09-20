@@ -32,7 +32,7 @@ const PackageFile = () => <Code lang='json'>{
     "export": "next export"
   },
   "dependencies": {
-    "next": "^6.1.2",
+    "next": "^7.0.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1"
   }
