@@ -4,7 +4,7 @@ import Button from '../button';
 import formatDate from 'date-fns/format';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
-export default ({ detail, link, title, date, children }) => {
+export default ({ detail, link, title, date, prefetch, children }) => {
   return (
     <div className="post-preview">
       <style jsx>{`
@@ -31,7 +31,7 @@ export default ({ detail, link, title, date, children }) => {
         }
       `}</style>
       <Container small>
-        <Link href={link}>
+        <Link href={link} prefetch={prefetch}>
           <h3 className="f3 post-title">{title}</h3>
         </Link>
         <p className="f6 date mute">
