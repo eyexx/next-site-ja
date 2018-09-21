@@ -115,7 +115,7 @@ Among these we get:
 
 - Support for `.mjs` source files
 - Code splitting improvements
-- Better tree-shaking (removal of unused code) support 
+- Better tree-shaking (removal of unused code) support
 
 Another new feature is WebAssembly support, Next.js can even server-render WebAssembly, here is an [example](https://github.com/zeit/next.js/tree/canary/examples/with-webassembly).
 
@@ -204,7 +204,7 @@ To further simplify our codebase and make use of the excellent React ecosystem, 
 
 Next.js 6 introduced Babel 7 while it was still in beta. Since then the stable version of Babel 7 has been released, and Next.js 7 now using this version.
 
-For a full list of changes, you can refer to Babel its [release notes](http://babeljs.io/blog/2018/08/27/7.0.0http://babeljs.io/blog/2018/08/27/7.0.0).
+For a full list of changes, you can refer to Babel its [release notes](http://babeljs.io/blog/2018/08/27/7.0.0).
 
 Some of the main features are:
 
@@ -219,7 +219,7 @@ If you do however have a custom Babel configuration, you have to upgrade the res
 
 In case you are upgrading from a version below Next.js 6 you can run the excellent [`babel-upgrade`](http://babeljs.io/blog/2018/08/27/7.0.0#babel-upgrade) tool.
 
-In addition to upgrading to Babel 7, the Next.js Babel preset ([`next/babel`](https://github.com/zeit/next.js#customizing-babel-config)) now defaults to setting the `modules` option to `commonjs` when `NODE_ENV` is set to `test`. 
+In addition to upgrading to Babel 7, the Next.js Babel preset ([`next/babel`](https://github.com/zeit/next.js#customizing-babel-config)) now defaults to setting the `modules` option to `commonjs` when `NODE_ENV` is set to `test`.
 
 This configuration option was often the only reason for creating a custom `.babelrc` in a Next.js project:
 
@@ -291,14 +291,14 @@ The main ways we have reduced size are:
 
 ## Static CDN Support
 
-In Next.js 5 we introduced `assetPrefix` support, a way to make Next.js automatically load assets from a certain location, usually a CDN. This option works great if your CDN supports proxying, you request an URL like 
+In Next.js 5 we introduced `assetPrefix` support, a way to make Next.js automatically load assets from a certain location, usually a CDN. This option works great if your CDN supports proxying, you request an URL like
 ```
 https://cdn.example.com/_next/static/<buildid>/pages/index.js
 ```
 
 Typically, the CDN checks if it has the file in its cache, or otherwise requests it directly from the origin.
 
-Proxying assets is precisely how the [Now CDN](https://zeit.co/cdn) works. 
+Proxying assets is precisely how the [Now CDN](https://zeit.co/cdn) works.
 
 However, some solutions require pre-uploading a directory directly into the CDN. The problem in doing this is that Next.js its URL structure did not match the folder structure inside the `.next` folder. For example our earlier example
 
@@ -341,7 +341,7 @@ export default () => <div>
 
 The above code tries to select the `p` tag does not work because styled-jsx styles are scoped to the current component, they do not leak into child components. One way to get around this was using the `:global` method, removing the prefix from the `p` tag. However, this introduces a new issue, which is that styles do leak across the page.
 
-In styled-jsx 3 this issue has been solved by introducing a new API, `css.resolve`, which will generate the `className` and `<style>` 
+In styled-jsx 3 this issue has been solved by introducing a new API, `css.resolve`, which will generate the `className` and `<style>`
  tags (the `styles` property) for the given styled-jsx string:
 
 ```javascript
@@ -351,7 +351,7 @@ const ChildComponent = ({className}) => <div className={className}>
   <p>some text</p>
 </div>
 
-const { className, styles } = css.resolve`p { color: black }` 
+const { className, styles } = css.resolve`p { color: black }`
 
 export default () => <div>
   <ChildComponent className={className} />
@@ -420,7 +420,7 @@ As the amount of apps using Next.js is continuously growing, we needed a way to 
 
 <Image src="/static/blog/next-7/showcase.png" width={2466/2.5} height={1698/2.5} caption="Get inspired on nextjs.org/showcase" />
 
-This new showcase allows us to add new apps built with Next.js continuously. 
+This new showcase allows us to add new apps built with Next.js continuously.
 
 We invite you to visit [`/showcase`](/showcase) to get inspired, or submit your app that uses Next.js!
 
