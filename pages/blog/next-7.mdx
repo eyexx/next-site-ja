@@ -325,8 +325,6 @@ We are excited to introduce styled-jsx 3, the by default included CSS-in-JS solu
 One thing that was often unclear was how to style a child component if that component is not part of the current component scope, for example, if you included a child component that needed specific styles only when used inside the parent component:
 
 ```javascript
-import css from 'styled-jsx/css'
-
 const ChildComponent = () => <div>
   <p>some text</p>
 </div>
@@ -336,7 +334,7 @@ export default () => <div>
   <style jsx>{`
     p { color: black }
   `}</style>
-<div/>
+</div>
 ```
 
 The above code tries to select the `p` tag does not work because styled-jsx styles are scoped to the current component, they do not leak into child components. One way to get around this was using the `:global` method, removing the prefix from the `p` tag. However, this introduces a new issue, which is that styles do leak across the page.
@@ -347,8 +345,8 @@ In styled-jsx 3 this issue has been solved by introducing a new API, `css.resolv
 ```javascript
 import css from 'styled-jsx/css'
 
-const ChildComponent = ({className}) => <div className={className}>
-  <p>some text</p>
+const ChildComponent = ({className}) => <div>
+  <p className={className}>some text</p>
 </div>
 
 const { className, styles } = css.resolve`p { color: black }`
@@ -356,7 +354,7 @@ const { className, styles } = css.resolve`p { color: black }`
 export default () => <div>
   <ChildComponent className={className} />
   {styles}
-<div/>
+</div>
 ```
 
 This new API allows for transparently passing through custom styling to child components.
@@ -433,7 +431,7 @@ Ever since it's first release Next.js has been used in everything from fortune 5
 - On GitHub, the project has been starred over 29,000 times.
 - Almost 2200 pull requests were submitted since the first release.
 
-The Next.js community on [spectrum.chat/next-js](https://spectrum.chat/next-js) has nearly 2000 members. [Join us!](https://spectrum.chat/next-js)!
+The Next.js community on [spectrum.chat/next-js](https://spectrum.chat/next-js) has nearly 2000 members. [Join us!](https://spectrum.chat/next-js)
 
 <style jsx>{`
 table {
