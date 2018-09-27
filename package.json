@@ -1,9 +1,11 @@
 {
   "name": "next-site",
+  "description": "Next.js Official Homepage",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:quietshu/next-site.git",
-  "author": "Shu <ds303077135@gmail.com>",
+  "repository": "zeit/next-site",
+  "author": "",
+  "homepage": "https://nextjs.org",
   "license": "MIT",
   "scripts": {
     "dev": "next",

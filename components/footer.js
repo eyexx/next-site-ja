@@ -184,7 +184,7 @@ export default withPure(() => (
           </div>
         </div>
         <div className="copyright f6">
-          <Link href="https://zeit.co/oss">
+          <Link href="https://zeit.co">
             <a rel="noreferrer" target="_blank" aria-label="ZEIT">
               <ZEITLogo />
             </a>
