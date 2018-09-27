@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import IObserver from './intersection-observer';
 
 // This component might look a little complex
 // because one could argue that keeping the aspect ratio
@@ -11,9 +12,24 @@ import PropTypes from 'prop-types';
 // ratio of the image's container BEFORE the image loads
 
 class Image extends Component {
+  static defaultProps = {
+    lazy: true
+  };
+
   static propTypes = {
     width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired
+    height: PropTypes.number.isRequired,
+    lazy: PropTypes.bool
+  };
+
+  state = {
+    src: !this.props.lazy ? this.props.videoSrc || this.props.src : undefined
+  };
+
+  handleIntersect = entry => {
+    if (entry.isIntersecting) {
+      this.setState({ src: this.props.videoSrc || this.props.src });
+    }
   };
 
   render() {
@@ -23,9 +39,11 @@ class Image extends Component {
       height,
       margin = 40,
       video = false,
+      videoSrc,
       captionSpacing = null,
       renderImage,
       oversize = true,
+      lazy,
       ...rest
     } = this.props;
 
@@ -33,60 +51,73 @@ class Image extends Component {
     const classes = width > 650 && oversize ? 'oversize' : '';
 
     return (
-      <figure className={classes}>
-        <main style={{ width }}>
-          <div style={{ paddingBottom: aspectRatio }}>
-            {video && <video muted autoPlay loop playsInline {...rest} />}
-            {!video && !renderImage && <img {...rest} />}
-            {renderImage && renderImage(rest)}
-          </div>
+      <IObserver
+        once
+        onIntersect={this.handleIntersect}
+        rootMargin="20%"
+        disabled={!lazy}
+      >
+        <figure className={classes}>
+          <main style={{ width }}>
+            <div style={{ paddingBottom: aspectRatio }}>
+              {this.state.src ? (
+                videoSrc || video ? (
+                  <video src={this.state.src} muted autoPlay loop playsInline />
+                ) : renderImage ? (
+                  renderImage(rest)
+                ) : (
+                  <img src={this.state.src || null} />
+                )
+              ) : null}
+            </div>
 
-          {caption && (
-            <p style={captionSpacing ? { marginTop: captionSpacing } : {}}>
-              {caption}
-            </p>
-          )}
-        </main>
+            {caption && (
+              <p style={captionSpacing ? { marginTop: captionSpacing } : {}}>
+                {caption}
+              </p>
+            )}
+          </main>
 
-        <style jsx>
-          {`
-            figure {
-              display: block;
-              text-align: center;
-              margin: ${margin}px 0;
-            }
-            main {
-              margin: 0 auto;
-              max-width: 100%;
-            }
-            div {
-              position: relative;
-            }
-            figure :global(img),
-            figure :global(video) {
-              height: 100%;
-              left: 0;
-              position: absolute;
-              top: 0;
-              width: 100%;
-            }
-            p {
-              color: #999;
-              font-size: 12px;
-              margin: 0;
-              text-align: center;
-            }
-
-            @media (min-width: 1200px) {
-              figure.oversize {
-                width: ${width}px;
-                margin: ${margin}px 0 ${margin}px
-                  calc(((${width}px - 650px) / 2) * -1);
+          <style jsx>
+            {`
+              figure {
+                display: block;
+                text-align: center;
+                margin: ${margin}px 0;
               }
-            }
-          `}
-        </style>
-      </figure>
+              main {
+                margin: 0 auto;
+                max-width: 100%;
+              }
+              div {
+                position: relative;
+              }
+              figure :global(img),
+              figure :global(video) {
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+              }
+              p {
+                color: #999;
+                font-size: 12px;
+                margin: 0;
+                text-align: center;
+              }
+
+              @media (min-width: 1200px) {
+                figure.oversize {
+                  width: ${width}px;
+                  margin: ${margin}px 0 ${margin}px
+                    calc(((${width}px - 650px) / 2) * -1);
+                }
+              }
+            `}
+          </style>
+        </figure>
+      </IObserver>
     );
   }
 }
