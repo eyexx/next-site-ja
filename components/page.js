@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import classNames from 'classnames';
 
 import '../lib/polyfill';
 import { withMediaQuery } from './media-query';

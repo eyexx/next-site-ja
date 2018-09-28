@@ -44,6 +44,7 @@ export default class NextSite extends Document {
             content="/static/favicon/browserconfig.xml"
           />
           <meta name="theme-color" content="#000" />
+          <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
         <body>
           <Main />

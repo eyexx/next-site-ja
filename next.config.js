@@ -10,7 +10,7 @@ const webpack = require('webpack');
 
 var config = {
   pageExtensions: ['jsx', 'js', 'mdx'],
-  webpack: config => {
+  webpack: (config, { dev, isServer }) => {
     config.plugins = config.plugins || [];
     config.plugins.push(
       new webpack.ContextReplacementPlugin(
@@ -18,15 +18,33 @@ var config = {
         new RegExp(`^./(${['javascript', 'json', 'xml'].join('|')})$`)
       )
     );
+
+    if (isServer && !dev) {
+      const originalEntry = config.entry;
+      config.entry = async () => {
+        const entries = { ...(await originalEntry()) };
+        // This script imports components from the Next app, so it's transpiled to `.next/server/scripts/build-rss.js`
+        entries['./scripts/build-rss.js'] = './scripts/build-rss.js';
+        return entries;
+      };
+    }
+
     return config;
   },
-  exportPathMap(defaultPathMap) {
+  exportPathMap(defaultPathMap, { dev, dir, outDir }) {
     for (const route of Object.keys(showcaseMapping)) {
       defaultPathMap[`/showcase/${route}`] = {
         page: '/showcase',
         query: { item: route, from: 'url' }
       };
     }
+
+    if (!dev) {
+      const generateRSS = require('./.next/server/scripts/build-rss.js')
+        .default;
+      generateRSS(outDir);
+    }
+
     return defaultPathMap;
   }
 };
