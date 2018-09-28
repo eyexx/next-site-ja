@@ -88,10 +88,30 @@ const sortOrder = [
   'shadowtech',
   'inflect',
   'eurostar',
-  'plotly'
+  'plotly',
+  'garticio',
+  'trip'
 ];
 
 const mapping = {
+  garticio: {
+    title: 'Gartic.io',
+    link: 'https://gartic.io',
+    src: '/static/images/showcases/garticio.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'garticio',
+    tags: ['entertainment', 'creative']
+  },
+  trip: {
+    title: 'Trip.com',
+    link: 'https://www.trip.com/travel-guide',
+    src: '/static/images/showcases/trip.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'trip',
+    tags: ['e-commerce']
+  },
   colorbox: {
     title: 'ColorBox',
     link: 'https://www.colorbox.io',
