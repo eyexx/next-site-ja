@@ -1,5 +1,31 @@
+const path = require('path');
+
 const rehypePrism = require('@mapbox/rehype-prism');
-const withMDX = require('@zeit/next-mdx')({
+const rehypeReadme = require('./lib/rehype-readme');
+const nextMDX = require('@zeit/next-mdx');
+
+// only enable rehypeReadme for this file
+// because the github relative path replacement
+// might break things in other markdowns
+const withGitHubMDX = nextMDX({
+  extension: path.join(__dirname, 'components', 'docs', 'docs.mdx'),
+  options: {
+    hastPlugins: [
+      rehypePrism,
+      [
+        rehypeReadme,
+        {
+          repo: 'zeit/next.js',
+          branch: 'master',
+          level: 4
+        }
+      ]
+    ]
+  }
+});
+
+const withMDX = nextMDX({
+  extension: /\/(pages|blog)\/(.+)\.mdx?$/,
   options: {
     hastPlugins: [rehypePrism]
   }
@@ -68,4 +94,4 @@ if (process.env.BUNDLE_ANALYZE) {
   });
 }
 
-module.exports = withMDX(config);
+module.exports = withGitHubMDX(withMDX(config));

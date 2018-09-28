@@ -1,8 +1,6 @@
 import { PureComponent } from 'react';
 import Router from 'next/router';
-import slugify from '@sindresorhus/slugify';
-
-import withPure from './hoc/pure';
+import GithubSlugger from 'github-slugger';
 
 export default class Tabs extends PureComponent {
   constructor(props) {
@@ -13,9 +11,11 @@ export default class Tabs extends PureComponent {
     };
   }
   componentDidMount() {
+    const slugger = new GithubSlugger();
+
     if (this.props.anchor) {
       let index = this.props.data
-        .map(slugify)
+        .map(tab => slugger.slug(tab))
         .indexOf(window.location.hash.slice(1));
       if (index !== -1) {
         this.setState({
@@ -36,9 +36,11 @@ export default class Tabs extends PureComponent {
       // wait 300ms for re-render
       // for the performance reason
       setTimeout(() => {
+        const slugger = new GithubSlugger();
+
         Router.replace(
           window.location.pathname,
-          window.location.pathname + '#' + slugify(id),
+          window.location.pathname + '#' + slugger.slug(id),
           { shallow: true }
         );
       }, 300);
