@@ -210,7 +210,8 @@ export default class Sidebar extends PureComponent {
     if (isMobile) {
       const currentItem = flatHeadings.filter(
         item => currentSelection === '#' + item.id
-      )[0].title;
+      )[0];
+      const currentTitle = currentItem ? currentItem.title : '';
 
       return (
         <>
@@ -235,7 +236,7 @@ export default class Sidebar extends PureComponent {
                   >
                     <ArrowRight />
                   </span>
-                  {currentItem}
+                  {currentTitle}
                 </Container>
               </div>
               <div
