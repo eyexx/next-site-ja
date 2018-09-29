@@ -209,11 +209,26 @@ const DocH4 = ({ children, id }) => (
 );
 
 const Details = ({ children }) => {
-  return <details>{children}</details>;
+  return (
+    <details>
+      {children}
+      <style jsx>{`
+        margin: 1rem 0;
+      `}</style>
+    </details>
+  );
 };
 
 const Summary = ({ children }) => {
-  return <summary>{children}</summary>;
+  return (
+    <summary>
+      {children}
+      <style jsx>{`
+        cursor: pointer;
+        outline: none;
+      `}</style>
+    </summary>
+  );
 };
 
 export const components = {
