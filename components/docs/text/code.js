@@ -6,7 +6,7 @@ export const Code = ({ children, syntax }) => (
         pre {
           padding: 1.25rem;
           margin: 40px 0;
-          border: 1px solid #eaeaea;
+          border: 1px solid #d8d8d8;
           white-space: pre;
           overflow: auto;
           -webkit-overflow-scrolling: touch;
@@ -47,7 +47,8 @@ export const InlineCode = ({ children, wrap = false }) => (
 
         :global(h2) code,
         :global(h3) code,
-        :global(h4) code {
+        :global(h4) code,
+        :global(h5) code {
           font-size: unset;
           color: inherit;
         }

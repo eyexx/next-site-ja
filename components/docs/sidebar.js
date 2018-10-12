@@ -140,6 +140,8 @@ export class SidebarNavItem extends Component {
           a {
             display: block;
             color: inherit;
+            line-height: 1.4;
+            margin: 0.4rem 0;
             ${listStyle};
           }
           a:hover {

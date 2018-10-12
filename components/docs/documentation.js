@@ -3,7 +3,7 @@ import Router from 'next/router';
 import { format, parse } from 'url';
 import Head from './head';
 import Sidebar from './sidebar';
-import { H1, H2, H3, H4 } from './text/headings';
+import { H1, H2, H3, H4, H5 } from './text/headings';
 import { Blockquote } from './text/quotes';
 import { InlineCode, Code } from './text/code';
 import { GenericLink } from './text/link';
@@ -214,6 +214,9 @@ const Details = ({ children }) => {
       {children}
       <style jsx>{`
         margin: 1rem 0;
+        padding: 0 0.5rem;
+        background: #f9f9f9;
+        overflow: hidden;
       `}</style>
     </details>
   );
@@ -224,8 +227,15 @@ const Summary = ({ children }) => {
     <summary>
       {children}
       <style jsx>{`
-        cursor: pointer;
-        outline: none;
+        summary {
+          cursor: pointer;
+          outline: none;
+          font-weight: 500;
+        }
+
+        summary:hover {
+          opacity: 0.8;
+        }
       `}</style>
     </summary>
   );
@@ -236,6 +246,7 @@ export const components = {
   h2: DocH2,
   h3: DocH3,
   h4: DocH4,
+  h5: H5,
   blockquote: Blockquote,
   code: Code,
   inlineCode: InlineCode,

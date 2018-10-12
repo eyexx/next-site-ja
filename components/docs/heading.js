@@ -111,6 +111,11 @@ export default props => {
             display: none;
           }
 
+          :global(h3[data-components-heading]) {
+            border-top: 1px solid #f3f3f3;
+            padding-top: 2rem;
+          }
+
           .target {
             display: block;
             margin-top: -128px;

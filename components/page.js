@@ -244,8 +244,7 @@ export default withMediaQuery(({ title, description, children }) => (
         .token.prolog,
         .token.doctype,
         .token.cdata {
-          // color: #008000;
-          color: #068d06;
+          color: #2db52d;
           font-style: italic;
         }
 
@@ -253,6 +252,7 @@ export default withMediaQuery(({ title, description, children }) => (
           opacity: 0.7;
         }
 
+        .token.attr-value,
         .token.string {
           // color: #A31515;
           color: #ca0e0e;
@@ -275,13 +275,12 @@ export default withMediaQuery(({ title, description, children }) => (
 
         .token.atrule,
         .token.keyword,
-        .token.attr-value,
         .language-autohotkey .token.selector,
         .language-json .token.boolean,
         .language-json .token.number,
         code[class*='language-css'] {
-          // color: #0000ff;
-          color: #2525f9;
+          // color: #2525f9;
+          font-weight: 600;
         }
 
         .token.function {
@@ -290,6 +289,7 @@ export default withMediaQuery(({ title, description, children }) => (
         .token.deleted,
         .language-autohotkey .token.tag {
           color: #9a050f;
+          // color: #2b91af;
         }
 
         .token.selector,
@@ -313,7 +313,9 @@ export default withMediaQuery(({ title, description, children }) => (
 
         .token.tag,
         .token.selector {
-          color: #800000;
+          // color: #800000;
+          // color: #9a050f;
+          color: #2b91af;
         }
 
         .token.attr-name,
