@@ -329,6 +329,15 @@ export default withMediaQuery(({ title, description, children }) => (
           background: #ffff00;
           color: #393a34;
         }
+
+        svg {
+          shape-rendering: crispEdges;
+        }
+
+        svg path,
+        svg circle {
+          shape-rendering: geometricprecision;
+        }
       `}
     </style>
     {children}

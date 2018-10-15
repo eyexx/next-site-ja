@@ -9,7 +9,7 @@ export default withPure(({ size }) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     style={{
       // visually centering
-      transform: 'translateX(4%)'
+      transform: 'translateX(4%) rotate(-.5deg)'
     }}
   >
     <path
