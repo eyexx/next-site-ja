@@ -90,10 +90,41 @@ const sortOrder = [
   'eurostar',
   'plotly',
   'garticio',
-  'trip'
+  'trip',
+  'material-ui',
+  'framer',
+  'starbucksreserve'
 ];
 
 const mapping = {
+  starbucksreserve: {
+    title: 'Starbucks Reserve',
+    link: 'https://starbucksreserve.com',
+    src: '/static/images/showcases/starbucksreserve.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'starbucksreserve',
+    tags: ['e-commerce']
+  },
+  'material-ui': {
+    title: 'Material UI',
+    link: 'https://material-ui.com',
+    src: '/static/images/showcases/material-ui.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'material-ui',
+    tags: ['creative']
+  },
+  framer: {
+    title: 'Framer Store',
+    link: 'https://store.framer.com',
+    src: '/static/images/showcases/framer.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'framer',
+    highlighted: 2,
+    tags: ['creative']
+  },
   garticio: {
     title: 'Gartic.io',
     link: 'https://gartic.io',

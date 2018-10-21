@@ -18,6 +18,7 @@ import Docker from '../icons/companies/docker'
 import Invision from '../icons/companies/invision'
 import Binance from '../icons/companies/binance'
 import Hulu from '../icons/companies/hulu'
+import Starbucks from '../icons/companies/starbucks'
 
 export default () => (
   <div className="company-slider">
@@ -40,11 +41,12 @@ export default () => (
         <div><Auth0 /></div>
         <div><Tencent /></div>
         <div><Jet /></div>
-        <div><Coinbase /></div>
+        <div><Starbucks/></div>
         <div><Docker/></div>
+        <div><Hulu/></div>
+        <div><Coinbase /></div>
         <div><Invision/></div>
         <div><Binance/></div>
-        <div><Hulu/></div>
       </div>
     </BackgroundSlider>
     
