@@ -107,7 +107,7 @@ const mapping = {
     tags: ['e-commerce']
   },
   'material-ui': {
-    title: 'Material UI',
+    title: 'Material-UI',
     link: 'https://material-ui.com',
     src: '/static/images/showcases/material-ui.jpg',
     width: 3836,
