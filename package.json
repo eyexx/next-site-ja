@@ -14,7 +14,8 @@
     "start": "next start",
     "lint": "eslint",
     "prettier": "prettier **/*.js --write --single-quote",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "now-build": "next build && next export -o dist"
   },
   "pre-commit": "lint-staged",
   "lint-staged": {
