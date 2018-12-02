@@ -162,7 +162,7 @@ export default withRouter(({ isMobile, router }) => {
                       title="Showcase"
                       role="button"
                     >
-                      実際の使用例
+                      使用例
                     </a>
                   </Link>
                   <Link href="/blog" prefetch>
@@ -173,7 +173,7 @@ export default withRouter(({ isMobile, router }) => {
                       title="Blog"
                       role="button"
                     >
-                      Blog
+                      ブログ
                     </a>
                   </Link>
                   {
@@ -324,7 +324,7 @@ export default withRouter(({ isMobile, router }) => {
                     })}
                     role="button"
                   >
-                    Blog
+                    ブログ
                   </a>
                 </Link>
                 {
