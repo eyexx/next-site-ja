@@ -69,11 +69,11 @@ export default () => (
       </ComponentModal>
       <ComponentTitle>Button & Link</ComponentTitle>
       <ComponentModal title="Normal Button">
-        <Button href="#">Learn Next.js</Button>
+        <Button href="#">Next.jsを学ぶ</Button>
       </ComponentModal>
       <ComponentModal title="Inverted Button">
         <Button href="#" invert>
-          Learn Next.js
+          Next.jsを学ぶ
         </Button>
       </ComponentModal>
       <ComponentModal title="External Link">
