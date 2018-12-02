@@ -124,7 +124,7 @@ export default ({}) => {
           </div>
           <div className="campaign no-drag no-tap-highlight">
             <h1 className={classNames('title-1', 'fw6')}>
-              The React Framework for
+              React.jsのフレームワーク
             </h1>
             <h2 className={classNames('title-2', 'fw7')}>
               <Campaign />
@@ -133,7 +133,7 @@ export default ({}) => {
           <div>
             <div className="main-button">
               <Button href="#showcases" invert>
-                See Showcase
+                実際の使用例を見る
               </Button>
             </div>
             <div className="links">
@@ -143,7 +143,7 @@ export default ({}) => {
                 </a>
               </Link>
               <div>
-                <Button href="/docs">View Docs</Button>
+                <Button href="/docs">ドキュメントを見る</Button>
               </div>
               <div>
                 <Button href="https://github.com/zeit/next.js">GitHub</Button>
