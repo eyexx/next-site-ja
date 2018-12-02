@@ -1,14 +1,14 @@
-## How to use
+## 使用方法
 
-### Setup
+### セットアップ
 
-Install it:
+インストール:
 
 ```bash
 npm install --save next react react-dom
 ```
 
-and add a script to your package.json like this:
+package.jsonにこのように設定を追記します。:
 
 ```json
 {
@@ -20,15 +20,15 @@ and add a script to your package.json like this:
 }
 ```
 
-After that, the file-system is the main API. Every `.js` file becomes a route that gets automatically processed and rendered.
+この追記より、ファイルシステムがメインのAPIとなります.全ての `.js` という拡張子がつくファイルは 自動的に処理されてリンダリングされるルートとなります。
 
-Populate `./pages/index.js` inside your project:
+`./pages/index.js` をあなたのプロジェクト内に作ってください:
 
 ```jsx
 export default () => <div>Welcome to next.js!</div>
 ```
 
-and then just run `npm run dev` and go to `http://localhost:3000`. To use another port, you can run `npm run dev -- -p <your port here>`.
+`npm run dev`コマンドを動かし、`http://localhost:3000`を見てみましょう. To use another port, you can run `npm run dev -- -p <your port here>`.
 
 So far, we get:
 
