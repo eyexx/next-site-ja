@@ -1,10 +1,18 @@
 # Next.js とは
 
-React.jsによるサーバーサイドレンダリングおよび静的プログラムを実現するための軽量フレームワークです。
+React.jsによってサーバーサイドレンダリングおよび静的webサイトを実現するための軽量フレームワークです。
 
 ## このリポジトリについて
 Next.jsの公式日本語リファレンスが無いので作りました。
 どしどしプルリク受け付けております。😊
+
+## セットアップ
+```aidl
+git clone https://github.com/Koshukey/next-site-ja.git
+cd next-site-ja
+yarn
+yarn dev
+```
 
 
 
