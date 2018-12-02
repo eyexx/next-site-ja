@@ -29,14 +29,6 @@ export default () => (
           shadow
           active={isMobile ? 32 : 320}
         >
-          <Notification
-            href="/blog/next-7"
-            title="Next 7 is out!"
-            titleMobile="Next 7 is out!"
-          >
-            Next 7 is out! — DX improvements, better error reporting, upgraded
-            compilation pipeline Wednesday, September 19th 2018
-          </Notification>
           <Navbar />
         </Header>
       )}
