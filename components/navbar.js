@@ -140,7 +140,7 @@ export default withRouter(({ isMobile, router }) => {
                       title="Documentation"
                       role="button"
                     >
-                      Docs
+                      ドキュメント
                     </a>
                   </Link>
                   <Link href="/learn">
@@ -151,7 +151,7 @@ export default withRouter(({ isMobile, router }) => {
                       title="Learn"
                       role="button"
                     >
-                      Learn
+                      学ぶ
                     </a>
                   </Link>
                   <Link href="/showcase" prefetch>
@@ -162,7 +162,7 @@ export default withRouter(({ isMobile, router }) => {
                       title="Showcase"
                       role="button"
                     >
-                      Showcase
+                      実際の使用例
                     </a>
                   </Link>
                   <Link href="/blog" prefetch>
@@ -283,7 +283,7 @@ export default withRouter(({ isMobile, router }) => {
                     title="Documentation"
                     role="button"
                   >
-                    Docs
+                    ドキュメント
                   </a>
                 </Link>
                 <Link href="/learn">
@@ -294,7 +294,7 @@ export default withRouter(({ isMobile, router }) => {
                     title="Learn"
                     role="button"
                   >
-                    Learn
+                    学ぶ
                   </a>
                 </Link>
                 <Link href="/showcase" prefetch>
@@ -305,7 +305,7 @@ export default withRouter(({ isMobile, router }) => {
                     title="Showcase"
                     role="button"
                   >
-                    Showcase
+                    使用例
                   </a>
                 </Link>
               </div>
