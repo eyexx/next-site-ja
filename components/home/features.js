@@ -33,7 +33,7 @@ export default () => (
           <p>
             Oビルドサイズの縮小、開発者のコ​​ンパイルの高速化、その他数多くが改善のために最適化されています。
           </p>
-          <Button href="/showcase">View Showcase</Button>
+          <Button href="/showcase">使用例をみる</Button>
         </div>
       </div>
       <style jsx>{`
