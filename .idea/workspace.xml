@@ -66,7 +66,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="105">
-                <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+                <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -152,7 +152,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="57" />
-    <option name="y" value="23" />
+    <option name="y" value="203" />
     <option name="width" value="1323" />
     <option name="height" value="877" />
   </component>
@@ -272,16 +272,15 @@
       <updated>1543747304656</updated>
       <workItem from="1543747310480" duration="2369000" />
       <workItem from="1543749895217" duration="594000" />
-      <workItem from="1543852337108" duration="571000" />
+      <workItem from="1543852337108" duration="1475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3534000" />
+    <option name="totallyTimeSpent" value="4438000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="23" width="1323" height="877" extended-state="0" />
-    <editor active="true" />
+    <frame x="57" y="203" width="1323" height="877" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -547,7 +546,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="105">
-            <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>

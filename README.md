@@ -5,7 +5,7 @@ React.jsによってサーバーサイドレンダリングおよび静的webサ
 
 ## このリポジトリについて
 Next.jsの公式日本語リファレンスが無いので[zeit/next-site](https://github.com/zeit/next-site)からフォークして作りました。
-どしどしプルリク受け付けております。😊　ディスカッショングループは[こちら](https://spectrum.chat/next-site-ja)になります。
+どしどしプルリク受け付けております。😊　
 
 ## セットアップ
 ```aidl
