@@ -37,12 +37,11 @@ export default () => <div>Welcome to next.js!</div>
 - サーバーレンダリングと `./pages`のインデクシング
 - 静的ファイル提供。 `./static/` は `/static/` に変換される(given you [create a `./static/` directory](#static-file-serving-eg-images) inside your project)
 
-To see how simple this is, check out the [sample app - nextgram](https://github.com/zeit/nextgram)
+これがどれだけシンプルであるかを知りたいなら,  [sample app - nextgram](https://github.com/zeit/nextgram)このリポジトリをチェックしてみてください。
 
 ### 自動コード分割
 
-Every `import` you declare gets bundled and served with each page. That means pages never load unnecessary code!
-
+あなたが宣言した全ての`import`は バンドリングされそれぞれのページに供給されます. つまり各ページは不必要なコードを読み込む必要がないのです！
 ```jsx
 import cowsay from 'cowsay-browser'
 
