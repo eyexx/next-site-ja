@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d0d8adc9-2949-4365-99c0-ecd0d4b3fb55" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +25,7 @@
       <file leaf-file-name="customers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/home/customers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="465">
               <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
@@ -47,7 +46,7 @@
       <file leaf-file-name="docs.mdx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/docs/docs.mdx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-190">
+            <state relative-caret-position="645">
               <caret line="43" column="75" selection-start-line="43" selection-start-column="75" selection-end-line="43" selection-end-column="75" />
             </state>
           </provider>
@@ -57,8 +56,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="82">
-                <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+              <first_editor relative-caret-position="210">
+                <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
               </first_editor>
               <second_editor />
             </state>
@@ -68,7 +67,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/docs/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
+            <state>
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -79,7 +78,7 @@
       <file leaf-file-name="documentation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/docs/documentation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1224">
+            <state>
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -165,7 +164,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="57" />
+    <option name="x" value="459" />
     <option name="y" value="23" />
     <option name="width" value="1323" />
     <option name="height" value="877" />
@@ -176,6 +175,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,8 +216,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,15 +304,16 @@
       <workItem from="1543749895217" duration="594000" />
       <workItem from="1543852337108" duration="1475000" />
       <workItem from="1543908360545" duration="4609000" />
-      <workItem from="1544324941156" duration="1036000" />
+      <workItem from="1544324941156" duration="2066000" />
+      <workItem from="1544538534026" duration="307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10083000" />
+    <option name="totallyTimeSpent" value="11420000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="23" width="1323" height="877" extended-state="0" />
+    <frame x="459" y="23" width="1323" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -327,12 +327,11 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38333333" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38333333" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26541764" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26932085" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -345,6 +344,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,6 +354,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="120">
+            <caret line="8" column="81" selection-start-line="8" selection-start-column="81" selection-end-line="8" selection-end-column="81" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/components/home/features.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -689,7 +699,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/home/customers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="465">
           <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
@@ -706,7 +716,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/docs/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
+        <state>
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -715,7 +725,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/docs/documentation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1224">
+        <state>
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
@@ -724,7 +734,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/docs/docs.mdx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190">
+        <state relative-caret-position="645">
           <caret line="43" column="75" selection-start-line="43" selection-start-column="75" selection-end-line="43" selection-end-column="75" />
         </state>
       </provider>
@@ -732,8 +742,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="82">
-            <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <first_editor relative-caret-position="210">
+            <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>
